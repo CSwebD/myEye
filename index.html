@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stilist Beauty - Gene și Sprâncene</title>
+    <meta name="description" content="Caterina Beauty Studio - Expert în Extensii Gene și Stilizare Sprâncene în Chișinău">
+    <meta name="keywords" content="extensii gene, sprâncene, beauty, lash extensions, Chișinău, Moldova">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    <title>Caterina Beauty Studio | Extensii Gene & Sprâncene | Chișinău</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -21,26 +27,27 @@
         }
 
         .lang-btn {
-            background: rgba(255, 255, 255, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 8px 18px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 0.9em;
+            font-size: 0.85em;
             font-weight: 600;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .lang-btn:hover {
-            background: rgba(255, 255, 255, 0.5);
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .lang-btn.active {
             background: white;
-            color: #c89b67;
+            color: #2c2c2c;
             border-color: white;
         }
 
@@ -49,24 +56,25 @@
         }
 
         body {
-            font-family: 'Cormorant Garamond', 'Georgia', serif;
-            background: linear-gradient(135deg, #f5f0eb 0%, #ebe4dd 100%);
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8f5f2;
             min-height: 100vh;
             padding: 20px;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #d4a574 0%, #c89b67 100%);
-            padding: 60px 40px;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            padding: 80px 40px 60px;
             text-align: center;
             color: white;
             position: relative;
@@ -76,37 +84,40 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, transparent, white, transparent);
+            background: linear-gradient(90deg, transparent, #d4a574, transparent);
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             background: white;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 60px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            font-size: 50px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border: 4px solid #d4a574;
         }
 
         h1 {
-            font-size: 2.5em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .tagline {
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 300;
-            opacity: 0.95;
-            font-style: italic;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
         }
 
         .content {
@@ -118,12 +129,26 @@
         }
 
         .section-title {
-            font-size: 1.8em;
-            color: #c89b67;
-            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            color: #2c2c2c;
+            margin-bottom: 40px;
             text-align: center;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: #d4a574;
         }
 
         .services {
@@ -134,42 +159,197 @@
         }
 
         .service-card {
-            background: linear-gradient(135deg, #f9f6f3 0%, #f3ede7 100%);
-            padding: 30px;
-            border-radius: 15px;
+            background: white;
+            padding: 35px 30px;
+            border-radius: 8px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid #e8dfd6;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(200, 155, 103, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+            border-color: #d4a574;
         }
 
         .service-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
+            font-size: 48px;
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
-            font-size: 1.5em;
-            color: #8b6f47;
-            margin-bottom: 10px;
-            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            color: #2c2c2c;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .service-card p {
             color: #666;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 0.95em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            background: #f5f5f5;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .upload-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #999;
+            font-size: 0.9em;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .upload-placeholder span {
+            font-size: 48px;
+            margin-bottom: 10px;
+            opacity: 0.5;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c2c2c;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
             font-size: 1em;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4a574;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #2c2c2c;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: #d4a574;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
         }
 
         .contact-section {
-            background: linear-gradient(135deg, #f9f6f3 0%, #f3ede7 100%);
-            padding: 40px;
-            border-radius: 15px;
+            background: #fafafa;
+            padding: 50px 40px;
+            border-radius: 0;
             text-align: center;
+            border-top: 1px solid #e8e8e8;
         }
 
         .contact-methods {
@@ -188,21 +368,24 @@
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #d4a574 0%, #c89b67 100%);
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 26px;
             color: white;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .contact-icon:hover {
-            transform: scale(1.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #d4a574 0%, #c89b67 100%);
         }
 
         .contact-link {
@@ -219,21 +402,24 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #d4a574 0%, #c89b67 100%);
+            background: #2c2c2c;
             color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
+            padding: 16px 48px;
+            border-radius: 4px;
             text-decoration: none;
-            font-size: 1.1em;
-            margin-top: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1em;
+            margin-top: 35px;
+            transition: all 0.3s ease;
             font-weight: 500;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .cta-button:hover {
+            background: #d4a574;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(200, 155, 103, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         .about {
@@ -276,6 +462,10 @@
             .contact-methods {
                 gap: 20px;
             }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -288,7 +478,7 @@
                 <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
             </div>
             <div class="profile-image">✨</div>
-            <h1 id="business-name">Studio de Frumusețe Elena</h1>
+            <h1 id="business-name">Caterina Beauty Studio</h1>
             <p class="tagline" id="tagline">Expert în Extensii Gene și Stilizare Sprâncene</p>
         </div>
 
@@ -296,7 +486,7 @@
             <div class="section">
                 <h2 class="section-title" id="about-title">Despre Mine</h2>
                 <p class="about" id="about-text">
-                    Bine ați venit la studioul meu de frumusețe! Cu ani de experiență în extensii de gene și 
+                    Bine ați venit la studioul meu de frumusețe în Chișinău! Cu ani de experiență în extensii de gene și 
                     stilizarea sprâncenelor, sunt dedicată să vă pun în valoare frumusețea naturală. 
                     Fiecare clientă primește atenție personalizată și tratamente adaptate pentru a completa 
                     trăsăturile dvs. unice. Permiteți-mi să vă ajut să obțineți look-ul pe care l-ați visat mereu.
@@ -333,6 +523,36 @@
             </div>
 
             <div class="section">
+                <h2 class="section-title" id="gallery-title">Galerie</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <div class="upload-placeholder">
+                            <span>👁️</span>
+                            <p>Adaugă imagine 1</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="upload-placeholder">
+                            <span>👁️</span>
+                            <p>Adaugă imagine 2</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="upload-placeholder">
+                            <span>👁️</span>
+                            <p>Adaugă imagine 3</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="upload-placeholder">
+                            <span>👁️</span>
+                            <p>Adaugă imagine 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
                 <div class="contact-section">
                     <h2 class="section-title" id="contact-title">Contactați-mă</h2>
                     <p style="color: #666; margin-bottom: 20px; font-size: 1.1em;" id="contact-subtitle">
@@ -341,17 +561,17 @@
 
                     <div class="contact-methods">
                         <div class="contact-item">
-                            <a href="tel:+37360123456" style="text-decoration: none;">
+                            <a href="tel:+37368135924" style="text-decoration: none;">
                                 <div class="contact-icon">📱</div>
                             </a>
-                            <a href="tel:+37360123456" class="contact-link">+373 60 123 456</a>
+                            <a href="tel:+37368135924" class="contact-link">068 135 924</a>
                         </div>
 
                         <div class="contact-item">
-                            <a href="https://instagram.com/yourusername" target="_blank" style="text-decoration: none;">
+                            <a href="https://instagram.com/lami.studio.by.caterina" target="_blank" style="text-decoration: none;">
                                 <div class="contact-icon">📷</div>
                             </a>
-                            <a href="https://instagram.com/yourusername" target="_blank" class="contact-link">@yourusername</a>
+                            <a href="https://instagram.com/lami.studio.by.caterina" target="_blank" class="contact-link">@lami.studio.by.caterina</a>
                         </div>
 
                         <div class="contact-item">
@@ -362,7 +582,54 @@
                         </div>
                     </div>
 
-                    <a href="tel:+37360123456" class="cta-button" id="cta-button">Rezervă Programare</a>
+                    <form id="booking-form" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" id="label-name">Nume Complet *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" id="label-phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" id="label-email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date" id="label-date">Data Preferată *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time" id="label-time">Ora Preferată *</label>
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" id="label-service">Serviciu *</label>
+                            <select id="service" name="service" required>
+                                <option value="" id="option-select">Selectați serviciul</option>
+                                <option value="extensii-gene" id="option-lashes">Extensii Gene</option>
+                                <option value="stilizare-sprancene" id="option-brows">Stilizare Sprâncene</option>
+                                <option value="lash-lift" id="option-lift">Lash Lift & Vopsire</option>
+                                <option value="laminare-sprancene" id="option-lamination">Laminare Sprâncene</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" id="label-message">Mesaj Adițional</label>
+                            <textarea id="message" name="message" placeholder=""></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submit-btn">Trimite Rezervare</button>
+                        
+                        <div id="form-message" class="form-message"></div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -371,10 +638,10 @@
     <script>
         const translations = {
             ro: {
-                businessName: 'Studio de Frumusețe Elena',
+                businessName: 'Caterina Beauty Studio',
                 tagline: 'Expert în Extensii Gene și Stilizare Sprâncene',
                 aboutTitle: 'Despre Mine',
-                aboutText: 'Bine ați venit la studioul meu de frumusețe! Cu ani de experiență în extensii de gene și stilizarea sprâncenelor, sunt dedicată să vă pun în valoare frumusețea naturală. Fiecare clientă primește atenție personalizată și tratamente adaptate pentru a completa trăsăturile dvs. unice. Permiteți-mi să vă ajut să obțineți look-ul pe care l-ați visat mereu.',
+                aboutText: 'Bine ați venit la studioul meu de frumusețe în Chișinău! Cu ani de experiență în extensii de gene și stilizarea sprâncenelor, sunt dedicată să vă pun în valoare frumusețea naturală. Fiecare clientă primește atenție personalizată și tratamente adaptate pentru a completa trăsăturile dvs. unice. Permiteți-mi să vă ajut să obțineți look-ul pe care l-ați visat mereu.',
                 servicesTitle: 'Servicii',
                 service1Title: 'Extensii Gene',
                 service1Desc: 'Extensii clasice, volume și hibride pentru rezultate spectaculoase și de durată',
@@ -387,13 +654,28 @@
                 contactTitle: 'Contactați-mă',
                 contactSubtitle: 'Rezervați programarea astăzi și haideți să creăm look-ul dvs. perfect!',
                 facebookLabel: 'Pagina Facebook',
-                ctaButton: 'Rezervă Programare'
+                galleryTitle: 'Galerie',
+                labelName: 'Nume Complet *',
+                labelPhone: 'Telefon *',
+                labelEmail: 'Email',
+                labelDate: 'Data Preferată *',
+                labelTime: 'Ora Preferată *',
+                labelService: 'Serviciu *',
+                labelMessage: 'Mesaj Adițional',
+                submitBtn: 'Trimite Rezervare',
+                optionSelect: 'Selectați serviciul',
+                optionLashes: 'Extensii Gene',
+                optionBrows: 'Stilizare Sprâncene',
+                optionLift: 'Lash Lift & Vopsire',
+                optionLamination: 'Laminare Sprâncene',
+                successMessage: 'Mulțumim! Rezervarea dvs. a fost trimisă cu succes. Vă vom contacta în curând.',
+                errorMessage: 'A apărut o eroare. Vă rugăm să încercați din nou sau să ne sunați direct.'
             },
             ru: {
-                businessName: 'Студия Красоты Елена',
+                businessName: 'Студия Красоты Катерина',
                 tagline: 'Эксперт по Наращиванию Ресниц и Оформлению Бровей',
                 aboutTitle: 'Обо Мне',
-                aboutText: 'Добро пожаловать в мою студию красоты! С многолетним опытом наращивания ресниц и оформления бровей, я посвящаю себя подчеркиванию вашей естественной красоты. Каждая клиентка получает персонализированное внимание и процедуры, адаптированные для дополнения ваших уникальных черт. Позвольте мне помочь вам достичь образа, о котором вы всегда мечтали.',
+                aboutText: 'Добро пожаловать в мою студию красоты в Кишиневе! С многолетним опытом наращивания ресниц и оформления бровей, я посвящаю себя подчеркиванию вашей естественной красоты. Каждая клиентка получает персонализированное внимание и процедуры, адаптированные для дополнения ваших уникальных черт. Позвольте мне помочь вам достичь образа, о котором вы всегда мечтали.',
                 servicesTitle: 'Услуги',
                 service1Title: 'Наращивание Ресниц',
                 service1Desc: 'Классическое, объемное и гибридное наращивание для потрясающих результатов',
@@ -406,13 +688,28 @@
                 contactTitle: 'Свяжитесь со Мной',
                 contactSubtitle: 'Запишитесь на прием сегодня и давайте создадим ваш идеальный образ!',
                 facebookLabel: 'Страница Facebook',
-                ctaButton: 'Записаться'
+                galleryTitle: 'Галерея',
+                labelName: 'Полное Имя *',
+                labelPhone: 'Телефон *',
+                labelEmail: 'Email',
+                labelDate: 'Предпочтительная Дата *',
+                labelTime: 'Предпочтительное Время *',
+                labelService: 'Услуга *',
+                labelMessage: 'Дополнительное Сообщение',
+                submitBtn: 'Отправить Заявку',
+                optionSelect: 'Выберите услугу',
+                optionLashes: 'Наращивание Ресниц',
+                optionBrows: 'Оформление Бровей',
+                optionLift: 'Ламинирование & Окрашивание',
+                optionLamination: 'Ламинирование Бровей',
+                successMessage: 'Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.',
+                errorMessage: 'Произошла ошибка. Пожалуйста, попробуйте еще раз или позвоните нам напрямую.'
             },
             en: {
-                businessName: 'Elena Beauty Studio',
+                businessName: 'Caterina Beauty Studio',
                 tagline: 'Expert in Eyelash Extensions & Eyebrow Styling',
                 aboutTitle: 'About Me',
-                aboutText: 'Welcome to my beauty studio! With years of experience in eyelash extensions and eyebrow styling, I\'m dedicated to enhancing your natural beauty. Every client receives personalized attention and treatments tailored to complement your unique features. Let me help you achieve the look you\'ve always dreamed of.',
+                aboutText: 'Welcome to my beauty studio in Chișinău! With years of experience in eyelash extensions and eyebrow styling, I\'m dedicated to enhancing your natural beauty. Every client receives personalized attention and treatments tailored to complement your unique features. Let me help you achieve the look you\'ve always dreamed of.',
                 servicesTitle: 'Services',
                 service1Title: 'Eyelash Extensions',
                 service1Desc: 'Classic, Volume, and Hybrid lash extensions for stunning, long-lasting results',
@@ -425,7 +722,22 @@
                 contactTitle: 'Get In Touch',
                 contactSubtitle: 'Book your appointment today and let\'s create your perfect look!',
                 facebookLabel: 'Facebook Page',
-                ctaButton: 'Book Appointment'
+                galleryTitle: 'Gallery',
+                labelName: 'Full Name *',
+                labelPhone: 'Phone *',
+                labelEmail: 'Email',
+                labelDate: 'Preferred Date *',
+                labelTime: 'Preferred Time *',
+                labelService: 'Service *',
+                labelMessage: 'Additional Message',
+                submitBtn: 'Submit Booking',
+                optionSelect: 'Select service',
+                optionLashes: 'Eyelash Extensions',
+                optionBrows: 'Eyebrow Styling',
+                optionLift: 'Lash Lift & Tint',
+                optionLamination: 'Brow Lamination',
+                successMessage: 'Thank you! Your booking has been sent successfully. We will contact you soon.',
+                errorMessage: 'An error occurred. Please try again or call us directly.'
             }
         };
 
@@ -456,15 +768,163 @@
             document.getElementById('contact-title').textContent = t.contactTitle;
             document.getElementById('contact-subtitle').textContent = t.contactSubtitle;
             document.getElementById('facebook-label').textContent = t.facebookLabel;
-            document.getElementById('cta-button').textContent = t.ctaButton;
+            document.getElementById('gallery-title').textContent = t.galleryTitle;
+            
+            // Update form labels
+            document.getElementById('label-name').textContent = t.labelName;
+            document.getElementById('label-phone').textContent = t.labelPhone;
+            document.getElementById('label-email').textContent = t.labelEmail;
+            document.getElementById('label-date').textContent = t.labelDate;
+            document.getElementById('label-time').textContent = t.labelTime;
+            document.getElementById('label-service').textContent = t.labelService;
+            document.getElementById('label-message').textContent = t.labelMessage;
+            document.getElementById('submit-btn').textContent = t.submitBtn;
+            
+            // Update select options
+            document.getElementById('option-select').textContent = t.optionSelect;
+            document.getElementById('option-lashes').textContent = t.optionLashes;
+            document.getElementById('option-brows').textContent = t.optionBrows;
+            document.getElementById('option-lift').textContent = t.optionLift;
+            document.getElementById('option-lamination').textContent = t.optionLamination;
 
             // Save language preference
             localStorage.setItem('preferredLanguage', lang);
+            
+            // Store current language for form submission
+            window.currentLanguage = lang;
         }
+
+        // Get or create user identifier for tracking
+        function getUserIdentifier() {
+            let userId = localStorage.getItem('userId');
+            if (!userId) {
+                userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                localStorage.setItem('userId', userId);
+            }
+            return userId;
+        }
+
+        // Get device information
+        function getDeviceInfo() {
+            return {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                screenResolution: `${window.screen.width}x${window.screen.height}`,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                referrer: document.referrer || 'Direct'
+            };
+        }
+
+        // Handle form submission
+        document.getElementById('booking-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const formMessage = document.getElementById('form-message');
+            const lang = window.currentLanguage || 'ro';
+            const t = translations[lang];
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = lang === 'ro' ? 'Se trimite...' : lang === 'ru' ? 'Отправка...' : 'Sending...';
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value || 'Nu a furnizat',
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                service: document.getElementById('service').options[document.getElementById('service').selectedIndex].text,
+                message: document.getElementById('message').value || 'Nu a furnizat mesaj',
+                userId: getUserIdentifier(),
+                submissionTime: new Date().toLocaleString('ro-RO', { timeZone: 'Europe/Chisinau' }),
+                deviceInfo: getDeviceInfo()
+            };
+            
+            // Store submission history
+            let submissions = JSON.parse(localStorage.getItem('submissions') || '[]');
+            submissions.push({
+                userId: formData.userId,
+                timestamp: Date.now(),
+                date: formData.date,
+                time: formData.time
+            });
+            localStorage.setItem('submissions', JSON.stringify(submissions));
+            
+            // Send email using Web3Forms
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        access_key: '8c7a2d91-4e9b-4f3f-9d77-f1e8c6a7b9d3',
+                        subject: `Rezervare Nouă - ${formData.name}`,
+                        from_name: 'Caterina Beauty Studio',
+                        to_email: 'albert.fraut@gmail.com',
+                        message: `
+=== REZERVARE NOUĂ ===
+
+Nume: ${formData.name}
+Telefon: ${formData.phone}
+Email: ${formData.email}
+
+Data: ${formData.date}
+Ora: ${formData.time}
+Serviciu: ${formData.service}
+
+Mesaj: ${formData.message}
+
+=== INFORMAȚII TRACKING ===
+User ID: ${formData.userId}
+Data trimiterii: ${formData.submissionTime}
+
+Device Info:
+- User Agent: ${formData.deviceInfo.userAgent}
+- Platform: ${formData.deviceInfo.platform}
+- Browser Language: ${formData.deviceInfo.language}
+- Screen: ${formData.deviceInfo.screenResolution}
+- Timezone: ${formData.deviceInfo.timezone}
+- Referrer: ${formData.deviceInfo.referrer}
+
+Număr total de trimiteri de la acest user: ${submissions.filter(s => s.userId === formData.userId).length}
+                        `
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = t.successMessage;
+                    document.getElementById('booking-form').reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                formMessage.className = 'form-message error';
+                formMessage.textContent = t.errorMessage;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = t.submitBtn;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
 
         // Load saved language preference on page load
         window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLanguage');
+            const savedLang = localStorage.getItem('preferredLanguage') || 'ro';
+            window.currentLanguage = savedLang;
+            
             if (savedLang && savedLang !== 'ro') {
                 // Find and click the appropriate language button
                 const langButtons = document.querySelectorAll('.lang-btn');
