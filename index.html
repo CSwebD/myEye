@@ -9,7 +9,7 @@
     <title>Caterina Beauty Studio | Chișinău</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -20,7 +20,7 @@
 
         body {
             font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #ffffff;
+            background: #f5f1ed;
             min-height: 100vh;
             padding: 0;
             line-height: 1.6;
@@ -35,7 +35,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, #560216 0%, #6d1a2a 100%);
             padding: 40px 20px 30px;
             text-align: center;
             color: white;
@@ -71,37 +71,40 @@
 
         .lang-btn.active {
             background: white;
-            color: #1a1a1a;
+            color: #560216;
             border-color: white;
-        }
-
-        .profile-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: white;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 3px solid #d4a574;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            font-weight: 600;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
+            font-size: 2.4em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .tagline {
-            font-size: 0.9em;
+            font-size: 1em;
             font-weight: 300;
-            opacity: 0.9;
-            letter-spacing: 0.3px;
+            opacity: 0.95;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tagline::before {
+            content: '✦';
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .tagline::after {
+            content: '✦';
+            font-size: 0.9em;
+            opacity: 0.8;
         }
 
         .content {
@@ -119,15 +122,16 @@
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6em;
-            color: #1a1a1a;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 1.8em;
+            color: #560216;
             margin-bottom: 25px;
             text-align: center;
-            font-weight: 600;
-            letter-spacing: 0.3px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             position: relative;
             padding-bottom: 12px;
+            text-transform: uppercase;
         }
 
         .section-title::after {
@@ -176,15 +180,23 @@
         }
 
         .service-icon {
-            font-size: 32px;
+            font-size: 0;
             flex-shrink: 0;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f8f8f8;
+            background: #fff;
             border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #f0f0f0;
+        }
+
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .service-content {
@@ -194,7 +206,7 @@
         .service-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.1em;
-            color: #1a1a1a;
+            color: #560216;
             margin-bottom: 6px;
             font-weight: 600;
         }
@@ -203,34 +215,6 @@
             color: #666;
             line-height: 1.6;
             font-size: 0.85em;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            aspect-ratio: 1;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease;
-            cursor: pointer;
-            background: #f5f5f5;
-        }
-
-        .gallery-item:active {
-            transform: scale(0.95);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .contact-section {
@@ -258,16 +242,20 @@
         .contact-icon {
             width: 55px;
             height: 55px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, #560216 0%, #6d1a2a 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
             color: white;
             transition: all 0.2s ease;
             cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 3px 10px rgba(86, 2, 22, 0.3);
+        }
+
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
         }
 
         .contact-icon:active {
@@ -296,7 +284,7 @@
         .form-group label {
             display: block;
             margin-bottom: 6px;
-            color: #1a1a1a;
+            color: #560216;
             font-weight: 500;
             font-size: 0.9em;
         }
@@ -337,7 +325,7 @@
 
         .submit-btn {
             width: 100%;
-            background: #1a1a1a;
+            background: #560216;
             color: white;
             padding: 15px;
             border: none;
@@ -349,7 +337,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             margin-top: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(86, 2, 22, 0.3);
         }
 
         .submit-btn:active:not(:disabled) {
@@ -398,18 +386,12 @@
                 padding: 50px 30px 40px;
             }
 
-            .profile-image {
-                width: 100px;
-                height: 100px;
-                font-size: 45px;
-            }
-
             h1 {
-                font-size: 2.2em;
+                font-size: 3em;
             }
 
             .tagline {
-                font-size: 1em;
+                font-size: 1.15em;
             }
 
             .section {
@@ -439,18 +421,12 @@
                 padding: 70px 40px 50px;
             }
 
-            .profile-image {
-                width: 120px;
-                height: 120px;
-                font-size: 50px;
-            }
-
             h1 {
-                font-size: 2.6em;
+                font-size: 3.6em;
             }
 
             .tagline {
-                font-size: 1.1em;
+                font-size: 1.3em;
             }
 
             .section {
@@ -458,21 +434,12 @@
             }
 
             .section-title {
-                font-size: 1.9em;
+                font-size: 2.2em;
             }
 
             .services {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 15px;
-            }
-
-            .gallery-item:hover {
-                transform: scale(1.05);
             }
 
             .contact-icon:hover {
@@ -500,19 +467,15 @@
                 <button class="lang-btn" onclick="switchLanguage('ru')">RU</button>
                 <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
             </div>
-            <div class="profile-image">✨</div>
-            <h1 id="business-name">Caterina Beauty Studio</h1>
-            <p class="tagline" id="tagline">Expert în Extensii Gene și Stilizare Sprâncene</p>
+            <h1 id="business-name">LAMI STUDIO</h1>
+            <p class="tagline" id="tagline">by Caterina</p>
         </div>
 
         <div class="content">
             <div class="section">
                 <h2 class="section-title" id="about-title">Despre Mine</h2>
                 <p class="about" id="about-text">
-                    Bine ați venit la studioul meu de frumusețe în Chișinău! Cu ani de experiență în extensii de gene și 
-                    stilizarea sprâncenelor, sunt dedicată să vă pun în valoare frumusețea naturală. 
-                    Fiecare clientă primește atenție personalizată și tratamente adaptate pentru a completa 
-                    trăsăturile dvs. unice.
+                    Bună, mă numesc Caterina! Bine ai venit la LAMI Studio! Aici găsești proceduri de laminare pentru gene și sprâncene, realizate cu grijă și atenție la detalii. Îmi doresc ca fiecare clientă să se bucure de îngrijirea potrivită, iar fiecare procedură este făcută cu delicatețe pentru a evidenția frumusețea naturală și pentru a oferi rezultate frumoase, care durează săptămâni.
                 </p>
             </div>
 
@@ -520,53 +483,43 @@
                 <h2 class="section-title" id="services-title">Servicii</h2>
                 <div class="services">
                     <div class="service-card">
-                        <div class="service-icon">👁️</div>
+                        <div class="service-icon">
+                            <img src="pic1.jpg" alt="Laminare Sprâncene">
+                        </div>
                         <div class="service-content">
-                            <h3 id="service1-title">Extensii Gene</h3>
-                            <p id="service1-desc">Extensii clasice, volume și hibride pentru rezultate spectaculoase</p>
+                            <h3 id="service1-title">Laminare Sprâncene</h3>
+                            <p id="service1-desc">Sprâncene definite, voluminoase, ordonate și naturale</p>
                         </div>
                     </div>
 
                     <div class="service-card">
-                        <div class="service-icon">✏️</div>
+                        <div class="service-icon">
+                            <img src="pic2.jpg" alt="Stilizare și Vopsire">
+                        </div>
                         <div class="service-content">
-                            <h3 id="service2-title">Stilizare Sprâncene</h3>
-                            <p id="service2-desc">Modelare, vopsire și microblading pentru sprâncene perfecte</p>
+                            <h3 id="service2-title">Stilizare și vopsire</h3>
+                            <p id="service2-desc">Definire, culoare și formă, aspect impecabil</p>
                         </div>
                     </div>
 
                     <div class="service-card">
-                        <div class="service-icon">💫</div>
+                        <div class="service-icon">
+                            <img src="pic3.jpg" alt="Laminare Gene">
+                        </div>
                         <div class="service-content">
-                            <h3 id="service3-title">Lash Lift & Vopsire</h3>
-                            <p id="service3-desc">Îmbunătățire naturală a genelor cu buclă și culoare</p>
+                            <h3 id="service3-title">Laminare gene</h3>
+                            <p id="service3-desc">Gene voluminoase, curbate și revitalizate cu botox</p>
                         </div>
                     </div>
 
                     <div class="service-card">
-                        <div class="service-icon">🌟</div>
-                        <div class="service-content">
-                            <h3 id="service4-title">Laminare Sprâncene</h3>
-                            <p id="service4-desc">Transformați sprâncenele în arcade perfecte și voluminoase</p>
+                        <div class="service-icon">
+                            <img src="pic4.jpg" alt="COMBO Laminare">
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title" id="gallery-title">Galerie</h2>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="pic1.jpg" alt="Extensii gene - Caterina Beauty Studio">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pic2.jpg" alt="Stilizare sprâncene - Caterina Beauty Studio">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pic3.jpg" alt="Lash lift - Caterina Beauty Studio">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pic4.jpg" alt="Laminare sprâncene - Caterina Beauty Studio">
+                        <div class="service-content">
+                            <h3 id="service4-title">COMBO Laminare</h3>
+                            <p id="service4-desc">Laminare gene + sprâncene la un preț avantajos</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -581,21 +534,35 @@
                     <div class="contact-methods">
                         <div class="contact-item">
                             <a href="tel:+37368135924" style="text-decoration: none;">
-                                <div class="contact-icon">📱</div>
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
                             </a>
                             <a href="tel:+37368135924" class="contact-link">068 135 924</a>
                         </div>
 
                         <div class="contact-item">
                             <a href="https://instagram.com/lami.studio.by.caterina" target="_blank" style="text-decoration: none;">
-                                <div class="contact-icon">📷</div>
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                </div>
                             </a>
                             <a href="https://instagram.com/lami.studio.by.caterina" target="_blank" class="contact-link">@lami.studio.by.caterina</a>
                         </div>
 
                         <div class="contact-item">
                             <a href="https://facebook.com/yourpage" target="_blank" style="text-decoration: none;">
-                                <div class="contact-icon">👤</div>
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                    </svg>
+                                </div>
                             </a>
                             <a href="https://facebook.com/yourpage" target="_blank" class="contact-link" id="facebook-label">Pagina Facebook</a>
                         </div>
@@ -625,7 +592,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="time" id="label-time">Ora Preferată *</label>
-                                <input type="time" id="time" name="time" required>
+                                <input type="time" id="time" name="time" required min="10:00" max="18:00" step="1800">
                             </div>
                         </div>
 
@@ -633,10 +600,14 @@
                             <label for="service" id="label-service">Serviciu *</label>
                             <select id="service" name="service" required>
                                 <option value="" id="option-select">Selectați serviciul</option>
-                                <option value="extensii-gene" id="option-lashes">Extensii Gene</option>
-                                <option value="stilizare-sprancene" id="option-brows">Stilizare Sprâncene</option>
-                                <option value="lash-lift" id="option-lift">Lash Lift & Vopsire</option>
-                                <option value="laminare-sprancene" id="option-lamination">Laminare Sprâncene</option>
+                                <option value="combo-500" id="option-combo">Laminare Combo (sprâncene și gene) - 500 lei</option>
+                                <option value="laminare-sprancene-300" id="option-lam-brows">Laminarea sprâncenelor (laminare+stilizare+vopsire) - 300 lei</option>
+                                <option value="laminare-fara-vopsire-250" id="option-lam-no-tint">Laminare fără vopsire (laminare+stilizare) - 250 lei</option>
+                                <option value="stilizare-vopsire-200" id="option-style-tint">Stilizare și vopsire - 200 lei</option>
+                                <option value="vopsire-150" id="option-tint">Vopsire - 150 lei</option>
+                                <option value="stilizare-100" id="option-style">Stilizare - 100 lei</option>
+                                <option value="laminare-gene-300" id="option-lam-lashes">Laminarea genelor (laminare+vopsire+botox) - 300 lei</option>
+                                <option value="vopsire-gene-botox-150" id="option-tint-botox">Vopsirea genelor+botox - 150 lei</option>
                             </select>
                         </div>
 
@@ -657,23 +628,22 @@
     <script>
         const translations = {
             ro: {
-                businessName: 'Caterina Beauty Studio',
-                tagline: 'Expert în Extensii Gene și Stilizare Sprâncene',
+                businessName: 'LAMI STUDIO',
+                tagline: 'by Caterina',
                 aboutTitle: 'Despre Mine',
-                aboutText: 'Bine ați venit la studioul meu de frumusețe în Chișinău! Cu ani de experiență în extensii de gene și stilizarea sprâncenelor, sunt dedicată să vă pun în valoare frumusețea naturală. Fiecare clientă primește atenție personalizată și tratamente adaptate pentru a completa trăsăturile dvs. unice.',
+                aboutText: 'Bună, mă numesc Caterina! Bine ai venit la LAMI Studio! Aici găsești proceduri de laminare pentru gene și sprâncene, realizate cu grijă și atenție la detalii. Îmi doresc ca fiecare clientă să se bucure de îngrijirea potrivită, iar fiecare procedură este făcută cu delicatețe pentru a evidenția frumusețea naturală și pentru a oferi rezultate frumoase, care durează săptămâni.',
                 servicesTitle: 'Servicii',
-                service1Title: 'Extensii Gene',
-                service1Desc: 'Extensii clasice, volume și hibride pentru rezultate spectaculoase',
-                service2Title: 'Stilizare Sprâncene',
-                service2Desc: 'Modelare, vopsire și microblading pentru sprâncene perfecte',
-                service3Title: 'Lash Lift & Vopsire',
-                service3Desc: 'Îmbunătățire naturală a genelor cu buclă și culoare',
-                service4Title: 'Laminare Sprâncene',
-                service4Desc: 'Transformați sprâncenele în arcade perfecte și voluminoase',
+                service1Title: 'Laminare Sprâncene',
+                service1Desc: 'Sprâncene definite, voluminoase, ordonate și naturale',
+                service2Title: 'Stilizare și vopsire',
+                service2Desc: 'Definire, culoare și formă, aspect impecabil',
+                service3Title: 'Laminare gene',
+                service3Desc: 'Gene voluminoase, curbate și revitalizate cu botox',
+                service4Title: 'COMBO Laminare',
+                service4Desc: 'Laminare gene + sprâncene la un preț avantajos',
                 contactTitle: 'Contactați-mă',
-                contactSubtitle: 'Rezervați programarea astăzi și haideți să creăm look-ul dvs. perfect!',
+                contactSubtitle: 'Rezervați programarea astăzi și evidențiați-vă frumusețea unică!',
                 facebookLabel: 'Pagina Facebook',
-                galleryTitle: 'Galerie',
                 labelName: 'Nume Complet *',
                 labelPhone: 'Telefon *',
                 labelEmail: 'Email (opțional)',
@@ -683,31 +653,34 @@
                 labelMessage: 'Mesaj Adițional (opțional)',
                 submitBtn: 'Trimite Rezervare',
                 optionSelect: 'Selectați serviciul',
-                optionLashes: 'Extensii Gene',
-                optionBrows: 'Stilizare Sprâncene',
-                optionLift: 'Lash Lift & Vopsire',
-                optionLamination: 'Laminare Sprâncene',
+                optionCombo: 'Laminare Combo (sprâncene și gene) - 500 lei',
+                optionLamBrows: 'Laminarea sprâncenelor (laminare+stilizare+vopsire) - 300 lei',
+                optionLamNoTint: 'Laminare fără vopsire (laminare+stilizare) - 250 lei',
+                optionStyleTint: 'Stilizare și vopsire - 200 lei',
+                optionTint: 'Vopsire - 150 lei',
+                optionStyle: 'Stilizare - 100 lei',
+                optionLamLashes: 'Laminarea genelor (laminare+vopsire+botox) - 300 lei',
+                optionTintBotox: 'Vopsirea genelor+botox - 150 lei',
                 successMessage: 'Mulțumim! Rezervarea dvs. a fost trimisă cu succes. Vă vom contacta în curând.',
                 errorMessage: 'A apărut o eroare. Vă rugăm să încercați din nou sau să ne sunați direct.'
             },
             ru: {
-                businessName: 'Студия Красоты Катерина',
-                tagline: 'Эксперт по Наращиванию Ресниц и Оформлению Бровей',
+                businessName: 'LAMI STUDIO',
+                tagline: 'by Caterina',
                 aboutTitle: 'Обо Мне',
-                aboutText: 'Добро пожаловать в мою студию красоты в Кишиневе! С многолетним опытом наращивания ресниц и оформления бровей, я посвящаю себя подчеркиванию вашей естественной красоты. Каждая клиентка получает персонализированное внимание и процедуры для ваших уникальных черт.',
+                aboutText: 'Привет, меня зовут Катерина! Добро пожаловать в LAMI Studio! Здесь вы найдете процедуры ламинирования ресниц и бровей, выполненные с заботой и вниманием к деталям. Я хочу, чтобы каждая клиентка наслаждалась правильным уходом, а каждая процедура выполнялась деликатно, чтобы подчеркнуть естественную красоту и дать красивые результаты, которые длятся неделями.',
                 servicesTitle: 'Услуги',
-                service1Title: 'Наращивание Ресниц',
-                service1Desc: 'Классическое, объемное и гибридное наращивание',
-                service2Title: 'Оформление Бровей',
-                service2Desc: 'Моделирование, окрашивание и микроблейдинг',
-                service3Title: 'Ламинирование & Окрашивание',
-                service3Desc: 'Естественное улучшение ресниц с изгибом',
-                service4Title: 'Ламинирование Бровей',
-                service4Desc: 'Превратите брови в идеальные объемные дуги',
+                service1Title: 'Ламинирование Бровей',
+                service1Desc: 'Четкие, объемные, ухоженные и натуральные брови',
+                service2Title: 'Укладка и окрашивание',
+                service2Desc: 'Контур, цвет и форма, безупречный вид',
+                service3Title: 'Ламинирование ресниц',
+                service3Desc: 'Объемные, изогнутые и восстановленные ботоксом ресницы',
+                service4Title: 'COMBO Ламинирование',
+                service4Desc: 'Ламинирование ресниц + бровей по выгодной цене',
                 contactTitle: 'Свяжитесь со Мной',
-                contactSubtitle: 'Запишитесь на прием сегодня и создадим ваш идеальный образ!',
+                contactSubtitle: 'Запишитесь на прием сегодня и подчеркните вашу уникальную красоту!',
                 facebookLabel: 'Страница Facebook',
-                galleryTitle: 'Галерея',
                 labelName: 'Полное Имя *',
                 labelPhone: 'Телефон *',
                 labelEmail: 'Email (необязательно)',
@@ -717,31 +690,34 @@
                 labelMessage: 'Сообщение (необязательно)',
                 submitBtn: 'Отправить Заявку',
                 optionSelect: 'Выберите услугу',
-                optionLashes: 'Наращивание Ресниц',
-                optionBrows: 'Оформление Бровей',
-                optionLift: 'Ламинирование & Окрашивание',
-                optionLamination: 'Ламинирование Бровей',
+                optionCombo: 'Ламинирование Combo (брови и ресницы) - 500 леев',
+                optionLamBrows: 'Ламинирование бровей (ламинирование+укладка+окрашивание) - 300 леев',
+                optionLamNoTint: 'Ламинирование без окрашивания (ламинирование+укладка) - 250 леев',
+                optionStyleTint: 'Укладка и окрашивание - 200 леев',
+                optionTint: 'Окрашивание - 150 леев',
+                optionStyle: 'Укладка - 100 леев',
+                optionLamLashes: 'Ламинирование ресниц (ламинирование+окрашивание+ботокс) - 300 леев',
+                optionTintBotox: 'Окрашивание ресниц+ботокс - 150 леев',
                 successMessage: 'Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.',
                 errorMessage: 'Произошла ошибка. Пожалуйста, попробуйте еще раз или позвоните нам.'
             },
             en: {
-                businessName: 'Caterina Beauty Studio',
-                tagline: 'Expert in Eyelash Extensions & Eyebrow Styling',
+                businessName: 'LAMI STUDIO',
+                tagline: 'by Caterina',
                 aboutTitle: 'About Me',
-                aboutText: 'Welcome to my beauty studio in Chișinău! With years of experience in eyelash extensions and eyebrow styling, I\'m dedicated to enhancing your natural beauty. Every client receives personalized attention and treatments tailored to your unique features.',
+                aboutText: 'Hi, my name is Caterina! Welcome to LAMI Studio! Here you will find lamination procedures for eyelashes and eyebrows, performed with care and attention to detail. I want every client to enjoy proper care, and each procedure is done delicately to highlight natural beauty and provide beautiful results that last for weeks.',
                 servicesTitle: 'Services',
-                service1Title: 'Eyelash Extensions',
-                service1Desc: 'Classic, Volume, and Hybrid extensions for stunning results',
-                service2Title: 'Eyebrow Styling',
-                service2Desc: 'Shaping, tinting, and microblading for perfect brows',
-                service3Title: 'Lash Lift & Tint',
-                service3Desc: 'Natural enhancement with curl and color',
-                service4Title: 'Brow Lamination',
-                service4Desc: 'Transform brows into fuller, perfectly shaped arches',
+                service1Title: 'Brow Lamination',
+                service1Desc: 'Defined, voluminous, neat and natural eyebrows',
+                service2Title: 'Styling and Tinting',
+                service2Desc: 'Definition, color and shape, impeccable appearance',
+                service3Title: 'Lash Lamination',
+                service3Desc: 'Voluminous, curved and revitalized lashes with botox',
+                service4Title: 'COMBO Lamination',
+                service4Desc: 'Lash + brow lamination at an advantageous price',
                 contactTitle: 'Get In Touch',
-                contactSubtitle: 'Book your appointment today and let\'s create your perfect look!',
+                contactSubtitle: 'Book your appointment today and highlight your unique beauty!',
                 facebookLabel: 'Facebook Page',
-                galleryTitle: 'Gallery',
                 labelName: 'Full Name *',
                 labelPhone: 'Phone *',
                 labelEmail: 'Email (optional)',
@@ -751,10 +727,14 @@
                 labelMessage: 'Additional Message (optional)',
                 submitBtn: 'Submit Booking',
                 optionSelect: 'Select service',
-                optionLashes: 'Eyelash Extensions',
-                optionBrows: 'Eyebrow Styling',
-                optionLift: 'Lash Lift & Tint',
-                optionLamination: 'Brow Lamination',
+                optionCombo: 'Lamination Combo (brows and lashes) - 500 lei',
+                optionLamBrows: 'Brow lamination (lamination+styling+tinting) - 300 lei',
+                optionLamNoTint: 'Lamination without tinting (lamination+styling) - 250 lei',
+                optionStyleTint: 'Styling and tinting - 200 lei',
+                optionTint: 'Tinting - 150 lei',
+                optionStyle: 'Styling - 100 lei',
+                optionLamLashes: 'Lash lamination (lamination+tinting+botox) - 300 lei',
+                optionTintBotox: 'Lash tinting+botox - 150 lei',
                 successMessage: 'Thank you! Your booking has been sent successfully. We will contact you soon.',
                 errorMessage: 'An error occurred. Please try again or call us directly.'
             }
@@ -782,7 +762,6 @@
             document.getElementById('contact-title').textContent = t.contactTitle;
             document.getElementById('contact-subtitle').textContent = t.contactSubtitle;
             document.getElementById('facebook-label').textContent = t.facebookLabel;
-            document.getElementById('gallery-title').textContent = t.galleryTitle;
             
             document.getElementById('label-name').textContent = t.labelName;
             document.getElementById('label-phone').textContent = t.labelPhone;
@@ -794,10 +773,14 @@
             document.getElementById('submit-btn').textContent = t.submitBtn;
             
             document.getElementById('option-select').textContent = t.optionSelect;
-            document.getElementById('option-lashes').textContent = t.optionLashes;
-            document.getElementById('option-brows').textContent = t.optionBrows;
-            document.getElementById('option-lift').textContent = t.optionLift;
-            document.getElementById('option-lamination').textContent = t.optionLamination;
+            document.getElementById('option-combo').textContent = t.optionCombo;
+            document.getElementById('option-lam-brows').textContent = t.optionLamBrows;
+            document.getElementById('option-lam-no-tint').textContent = t.optionLamNoTint;
+            document.getElementById('option-style-tint').textContent = t.optionStyleTint;
+            document.getElementById('option-tint').textContent = t.optionTint;
+            document.getElementById('option-style').textContent = t.optionStyle;
+            document.getElementById('option-lam-lashes').textContent = t.optionLamLashes;
+            document.getElementById('option-tint-botox').textContent = t.optionTintBotox;
 
             localStorage.setItem('preferredLanguage', lang);
             window.currentLanguage = lang;
@@ -865,6 +848,48 @@
             
             const submitBtn = document.getElementById('submit-btn');
             const formMessage = document.getElementById('form-message');
+            
+            // Validate time - only :00 or :30 minutes allowed
+            const timeInput = document.getElementById('time');
+            const timeValue = timeInput.value;
+            const [hours, minutes] = timeValue.split(':');
+            
+            if (minutes !== '00' && minutes !== '30') {
+                const lang = window.currentLanguage || 'ro';
+                const errorMsg = lang === 'ro' ? 'Vă rugăm să selectați ora la :00 sau :30 (exemplu: 10:00, 10:30, 11:00, etc.)' :
+                                lang === 'ru' ? 'Пожалуйста, выберите время на :00 или :30 (например: 10:00, 10:30, 11:00 и т.д.)' :
+                                'Please select time at :00 or :30 (example: 10:00, 10:30, 11:00, etc.)';
+                
+                formMessage.className = 'form-message error';
+                formMessage.textContent = errorMsg;
+                formMessage.style.display = 'block';
+                
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+                
+                return;
+            }
+            
+            // Validate time range (10:00 - 18:00)
+            const hoursNum = parseInt(hours);
+            if (hoursNum < 10 || hoursNum > 18 || (hoursNum === 18 && minutes !== '00')) {
+                const lang = window.currentLanguage || 'ro';
+                const errorMsg = lang === 'ro' ? 'Program: 10:00 - 18:00. Vă rugăm să selectați o oră în acest interval.' :
+                                lang === 'ru' ? 'Рабочее время: 10:00 - 18:00. Пожалуйста, выберите время в этом диапазоне.' :
+                                'Working hours: 10:00 - 18:00. Please select a time within this range.';
+                
+                formMessage.className = 'form-message error';
+                formMessage.textContent = errorMsg;
+                formMessage.style.display = 'block';
+                
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+                
+                return;
+            }
+            
             const lang = window.currentLanguage || 'ro';
             const t = translations[lang];
             
