@@ -11,6 +11,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Agrandir Grand';
+            src: url('https://db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'New Icon';
+            src: url('https://db.onlinewebfonts.com/t/f9e2b0b3c87c127ef3c3a7f3f0c7b0c0.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -76,35 +91,19 @@
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Agrandir Grand', 'Montserrat', sans-serif;
             font-size: 2.4em;
-            font-weight: 700;
+            font-weight: 400;
             margin-bottom: 8px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            letter-spacing: 4px;
         }
 
         .tagline {
-            font-size: 1em;
-            font-weight: 300;
+            font-family: 'New Icon', 'Playfair Display', serif;
+            font-size: 1.1em;
+            font-weight: 400;
             opacity: 0.95;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .tagline::before {
-            content: '✦';
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        .tagline::after {
-            content: '✦';
-            font-size: 0.9em;
-            opacity: 0.8;
+            letter-spacing: 2px;
         }
 
         .content {
@@ -131,7 +130,6 @@
             letter-spacing: 0.5px;
             position: relative;
             padding-bottom: 12px;
-            text-transform: uppercase;
         }
 
         .section-title::after {
@@ -147,11 +145,12 @@
 
         .about {
             text-align: center;
-            color: #666;
+            color: #560216;
             line-height: 1.7;
             font-size: 0.95em;
             max-width: 100%;
             margin: 0 auto;
+            font-family: 'Bricolage Grotesque', sans-serif;
         }
 
         .services {
@@ -391,7 +390,7 @@
             }
 
             .tagline {
-                font-size: 1.15em;
+                font-size: 1.25em;
             }
 
             .section {
@@ -426,7 +425,7 @@
             }
 
             .tagline {
-                font-size: 1.3em;
+                font-size: 1.4em;
             }
 
             .section {
