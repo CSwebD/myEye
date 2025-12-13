@@ -579,11 +579,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" id="label-email">Email (opțional)</label>
-                            <input type="email" id="email" name="email" placeholder="exemplu@email.com">
-                        </div>
-
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="date" id="label-date">Data Preferată *</label>
@@ -664,7 +659,6 @@
                 facebookLabel: 'Pagina Facebook',
                 labelName: 'Nume Complet *',
                 labelPhone: 'Telefon *',
-                labelEmail: 'Email (opțional)',
                 labelDate: 'Data Preferată *',
                 labelTime: 'Ora Preferată *',
                 labelService: 'Serviciu *',
@@ -702,7 +696,6 @@
                 facebookLabel: 'Страница Facebook',
                 labelName: 'Полное Имя *',
                 labelPhone: 'Телефон *',
-                labelEmail: 'Email (необязательно)',
                 labelDate: 'Дата *',
                 labelTime: 'Время *',
                 labelService: 'Услуга *',
@@ -740,7 +733,6 @@
                 facebookLabel: 'Facebook Page',
                 labelName: 'Full Name *',
                 labelPhone: 'Phone *',
-                labelEmail: 'Email (optional)',
                 labelDate: 'Preferred Date *',
                 labelTime: 'Preferred Time *',
                 labelService: 'Service *',
@@ -786,7 +778,6 @@
             
             document.getElementById('label-name').textContent = t.labelName;
             document.getElementById('label-phone').textContent = t.labelPhone;
-            document.getElementById('label-email').textContent = t.labelEmail;
             document.getElementById('label-date').textContent = t.labelDate;
             document.getElementById('label-time').textContent = t.labelTime;
             document.getElementById('label-service').textContent = t.labelService;
@@ -880,7 +871,6 @@
             const formData = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value || 'Nu a furnizat',
                 date: document.getElementById('date').value,
                 time: document.getElementById('time').value,
                 service: document.getElementById('service').options[document.getElementById('service').selectedIndex].text,
@@ -908,7 +898,6 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Nume:     ${formData.name}
 Telefon:  ${formData.phone}
-Email:    ${formData.email}
 
 📅 DETALII REZERVARE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -970,7 +959,6 @@ ${formData.deviceInfo.userAgent}
                         _subject: `🎀 Rezervare Nouă - ${formData.name}`,
                         name: formData.name,
                         phone: formData.phone,
-                        email: formData.email,
                         date: formData.date,
                         time: formData.time,
                         service: formData.service,
