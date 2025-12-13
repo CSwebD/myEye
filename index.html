@@ -591,7 +591,26 @@
                             </div>
                             <div class="form-group">
                                 <label for="time" id="label-time">Ora Preferată *</label>
-                                <input type="time" id="time" name="time" required min="10:00" max="18:00" step="1800">
+                                <select id="time" name="time" required>
+                                    <option value="" id="option-time-select">Selectați ora</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                </select>
                             </div>
                         </div>
 
@@ -649,6 +668,7 @@
                 labelDate: 'Data Preferată *',
                 labelTime: 'Ora Preferată *',
                 labelService: 'Serviciu *',
+                optionTimeSelect: 'Selectați ora',
                 labelMessage: 'Mesaj Adițional (opțional)',
                 submitBtn: 'Trimite Rezervare',
                 optionSelect: 'Selectați serviciul',
@@ -686,6 +706,7 @@
                 labelDate: 'Дата *',
                 labelTime: 'Время *',
                 labelService: 'Услуга *',
+                optionTimeSelect: 'Выберите время',
                 labelMessage: 'Сообщение (необязательно)',
                 submitBtn: 'Отправить Заявку',
                 optionSelect: 'Выберите услугу',
@@ -723,6 +744,7 @@
                 labelDate: 'Preferred Date *',
                 labelTime: 'Preferred Time *',
                 labelService: 'Service *',
+                optionTimeSelect: 'Select time',
                 labelMessage: 'Additional Message (optional)',
                 submitBtn: 'Submit Booking',
                 optionSelect: 'Select service',
@@ -768,6 +790,7 @@
             document.getElementById('label-date').textContent = t.labelDate;
             document.getElementById('label-time').textContent = t.labelTime;
             document.getElementById('label-service').textContent = t.labelService;
+            document.getElementById('option-time-select').textContent = t.optionTimeSelect;
             document.getElementById('label-message').textContent = t.labelMessage;
             document.getElementById('submit-btn').textContent = t.submitBtn;
             
@@ -847,47 +870,6 @@
             
             const submitBtn = document.getElementById('submit-btn');
             const formMessage = document.getElementById('form-message');
-            
-            // Validate time - only :00 or :30 minutes allowed
-            const timeInput = document.getElementById('time');
-            const timeValue = timeInput.value;
-            const [hours, minutes] = timeValue.split(':');
-            
-            if (minutes !== '00' && minutes !== '30') {
-                const lang = window.currentLanguage || 'ro';
-                const errorMsg = lang === 'ro' ? 'Vă rugăm să selectați ora la :00 sau :30 (exemplu: 10:00, 10:30, 11:00, etc.)' :
-                                lang === 'ru' ? 'Пожалуйста, выберите время на :00 или :30 (например: 10:00, 10:30, 11:00 и т.д.)' :
-                                'Please select time at :00 or :30 (example: 10:00, 10:30, 11:00, etc.)';
-                
-                formMessage.className = 'form-message error';
-                formMessage.textContent = errorMsg;
-                formMessage.style.display = 'block';
-                
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-                
-                return;
-            }
-            
-            // Validate time range (10:00 - 18:00)
-            const hoursNum = parseInt(hours);
-            if (hoursNum < 10 || hoursNum > 18 || (hoursNum === 18 && minutes !== '00')) {
-                const lang = window.currentLanguage || 'ro';
-                const errorMsg = lang === 'ro' ? 'Program: 10:00 - 18:00. Vă rugăm să selectați o oră în acest interval.' :
-                                lang === 'ru' ? 'Рабочее время: 10:00 - 18:00. Пожалуйста, выберите время в этом диапазоне.' :
-                                'Working hours: 10:00 - 18:00. Please select a time within this range.';
-                
-                formMessage.className = 'form-message error';
-                formMessage.textContent = errorMsg;
-                formMessage.style.display = 'block';
-                
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-                
-                return;
-            }
             
             const lang = window.currentLanguage || 'ro';
             const t = translations[lang];
