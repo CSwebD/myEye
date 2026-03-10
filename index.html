@@ -21,7 +21,6 @@
             --crimson-deep: #3d0612;
             --crimson-mid: #6e1526;
             --gold: #c9a882;
-            --cream: #f5eeea;
             --white: #ffffff;
             --text-light: rgba(255,255,255,0.75);
             --text-dimmer: rgba(255,255,255,0.45);
@@ -33,14 +32,12 @@
             min-height: 100vh;
         }
 
-        /* ── CARD ── */
         .card {
             width: min(440px, 96vw);
             margin: 0 auto;
             background: var(--crimson);
             overflow: hidden;
             animation: cardReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-            position: relative;
         }
 
         @keyframes cardReveal {
@@ -48,7 +45,6 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* Lang */
         .lang-bar {
             display: flex;
             justify-content: flex-end;
@@ -85,14 +81,12 @@
         .lang-btn.active::after { width: 70%; }
         .lang-btn:hover { color: rgba(255,255,255,0.7); }
 
-        /* Brand */
         .header {
             padding: 30px 30px 28px;
             text-align: center;
         }
 
         .brand-name {
-            /* Agrandir-style: wide, thin, uppercase — Montserrat 300 stretched */
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(1.55rem, 7.5vw, 2rem);
             font-weight: 300;
@@ -101,7 +95,6 @@
             text-transform: uppercase;
             line-height: 1.1;
             margin-bottom: 6px;
-            /* Slight horizontal stretch like Agrandir Grand */
             transform: scaleX(1.05);
             display: inline-block;
         }
@@ -117,14 +110,12 @@
             margin-top: 2px;
         }
 
-        /* Divider */
         .divider {
             height: 1px;
             margin: 0 30px;
             background: rgba(201,168,130,0.25);
         }
 
-        /* Tagline */
         .tagline {
             text-align: center;
             padding: 20px 30px 24px;
@@ -136,12 +127,12 @@
             line-height: 1.7;
         }
 
-        /* ── SOCIAL ICONS — large, clear, properly branded ── */
+        /* ── SOCIAL ICONS ── */
         .contacts {
             padding: 0 30px 32px;
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
@@ -154,48 +145,18 @@
             border-radius: 14px;
             text-decoration: none;
             transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s;
-            position: relative;
-            overflow: hidden;
+            flex-shrink: 0;
         }
 
         .contact-btn:hover,
         .contact-btn:active {
-            transform: translateY(-4px) scale(1.08);
-            opacity: 0.92;
+            transform: translateY(-4px) scale(1.1);
+            opacity: 0.88;
         }
 
         .contact-btn svg {
-            width: 28px;
-            height: 28px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Each platform gets its real brand color as bg */
-        .icon-instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-        }
-
-        .icon-facebook {
-            background: #1877F2;
-        }
-
-        .icon-viber {
-            background: #7360F2;
-        }
-
-        .icon-whatsapp {
-            background: #25D366;
-        }
-
-        .icon-phone {
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(201,168,130,0.35);
-        }
-
-        /* All icons white on colored bg */
-        .contact-btn svg {
-            color: white;
+            width: 52px;
+            height: 52px;
         }
 
         /* Footer */
@@ -209,7 +170,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 0.62rem;
             font-weight: 400;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--text-dimmer);
         }
@@ -234,7 +195,6 @@
             cursor: pointer;
         }
 
-        /* Every 5th spans full width */
         .gallery-item:nth-child(5n) {
             grid-column: span 2;
             aspect-ratio: 2 / 1;
@@ -337,41 +297,61 @@
 
     <div class="contacts">
 
-        <!-- Instagram -->
-        <a class="contact-btn icon-instagram" href="https://instagram.com/lami.studio.by.caterina" target="_blank" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        <!-- Instagram — official glyph -->
+        <a class="contact-btn" href="https://instagram.com/lami.studio.by.caterina" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="ig-grad" cx="30%" cy="107%" r="120%">
+                        <stop offset="0%" stop-color="#fdf497"/>
+                        <stop offset="15%" stop-color="#fdf497"/>
+                        <stop offset="45%" stop-color="#fd5949"/>
+                        <stop offset="68%" stop-color="#d6249f"/>
+                        <stop offset="100%" stop-color="#285AEB"/>
+                    </radialGradient>
+                </defs>
+                <rect width="52" height="52" rx="13" fill="url(#ig-grad)"/>
+                <g fill="white">
+                    <!-- camera body -->
+                    <path d="M26 14c-3.25 0-3.66.01-4.94.07-1.27.06-2.14.26-2.9.56a5.86 5.86 0 0 0-2.12 1.38 5.86 5.86 0 0 0-1.38 2.12c-.3.76-.5 1.63-.56 2.9C14.01 22.34 14 22.75 14 26s.01 3.66.07 4.94c.06 1.27.26 2.14.56 2.9a5.86 5.86 0 0 0 1.38 2.12 5.86 5.86 0 0 0 2.12 1.38c.76.3 1.63.5 2.9.56C21.34 37.99 21.75 38 26 38s3.66-.01 4.94-.07c1.27-.06 2.14-.26 2.9-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.63.56-2.9.06-1.28.07-1.69.07-4.94s-.01-3.66-.07-4.94c-.06-1.27-.26-2.14-.56-2.9a5.86 5.86 0 0 0-1.38-2.12 5.86 5.86 0 0 0-2.12-1.38c-.76-.3-1.63-.5-2.9-.56C29.66 14.01 29.25 14 26 14zm0 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.23.4.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.35 1.06.4 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.23a3.7 3.7 0 0 1-.9 1.38 3.7 3.7 0 0 1-1.38.9c-.43.16-1.06.35-2.23.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.23-.4a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.35-1.06-.4-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.23.22-.56.48-.96.9-1.38a3.7 3.7 0 0 1 1.38-.9c.43-.16 1.06-.35 2.23-.4 1.27-.06 1.65-.07 4.85-.07z"/>
+                    <!-- lens -->
+                    <path d="M26 20.54a5.46 5.46 0 1 0 0 10.92 5.46 5.46 0 0 0 0-10.92zm0 9.01a3.54 3.54 0 1 1 0-7.09 3.54 3.54 0 0 1 0 7.09z"/>
+                    <!-- dot -->
+                    <circle cx="31.68" cy="20.32" r="1.28"/>
+                </g>
             </svg>
         </a>
 
-        <!-- Facebook -->
-        <a class="contact-btn icon-facebook" href="https://www.facebook.com/lamistudio.bycaterina" target="_blank" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        <!-- Facebook — official f -->
+        <a class="contact-btn" href="https://www.facebook.com/lamistudio.bycaterina" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <rect width="52" height="52" rx="13" fill="#1877F2"/>
+                <path fill="white" d="M34.6 27l.9-5.5h-5.3v-3.6c0-1.5.74-3 3.12-3H35.7V9.4S33.5 9 31.4 9c-4.37 0-7.22 2.65-7.22 7.44V21.5H19v5.5h5.18V40h6.38V27z"/>
             </svg>
         </a>
 
-        <!-- Viber -->
-        <a class="contact-btn icon-viber" href="viber://chat?number=%2B37368135924" aria-label="Viber">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.66 8.55c-.36-3.3-2.87-5.51-6.14-5.62C14.18 2.92 13.35 2.9 12 2.9c-1.35 0-2.18.02-2.52.03C6.21 3.04 3.7 5.25 3.34 8.55 3.18 9.96 3.18 11.37 3.34 12.78c.36 3.3 2.87 5.51 6.14 5.62.34.01 1.17.03 2.52.03v2.64l2.5-2.64c2.07-.19 3.83-1.3 4.8-3.03.45-.8.67-1.7.62-2.62a18.47 18.47 0 0 0 0-4.23z"/>
-                <path d="M14.5 14.5s-.5.5-1.5.5c-1.5 0-3-1.5-3-1.5S8.5 12 8.5 10.5c0-1 .5-1.5.5-1.5l1-.5c.3 0 .5.2.6.5l.5 1.5c.1.3 0 .6-.2.8l-.4.4c.3.6.7 1 1.4 1.3l.4-.4c.2-.2.5-.3.8-.2l1.5.5c.3.1.5.3.5.6l-.1 1z"/>
+        <!-- Viber — official icon -->
+        <a class="contact-btn" href="viber://chat?number=%2B37368135924" aria-label="Viber">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <rect width="52" height="52" rx="13" fill="#7360F2"/>
+                <path fill="white" d="M36.4 13.1C34 11 29.7 10 26.1 10h-.2C22.3 10 18 11 15.6 13.3c-2.1 2.2-3.1 5.2-3.2 9v.5c.1 3.5.8 7.6 4.3 10.1v3.6c0 .6.8.9 1.2.5l2.8-2.9a23 23 0 0 0 5.4.6h.2c3.6 0 7.9-1 10.3-3.3 2.7-2.5 3.3-6.2 3.3-9.3-.1-3.2-.6-7-3.5-9.7zm1 9.6c-.1 2.7-.7 5.7-2.8 7.6-1.9 1.8-5.5 2.7-8.5 2.7h-.2a20.4 20.4 0 0 1-5-.6l-.4-.1-2.3 2.4v-3l-.3-.2c-3-2-3.7-5.6-3.7-8.8v-.4c.1-3.4.9-5.9 2.6-7.8C18.6 13 22.2 12 25.9 12h.2c3.7 0 7.3 1 9.5 3.2 2.2 2.2 2.8 5.4 2.8 7.8v.7z"/>
+                <path fill="white" d="M33.1 29.3l-1.6-1.1c-.5-.3-1-.5-1.4-.2l-.5.3c-.4.3-.9.5-1.3.2a11.4 11.4 0 0 1-5-5c-.2-.4 0-.9.2-1.3l.3-.5c.3-.5.2-1-.2-1.4l-1.1-1.6c-.5-.7-1.4-.8-2-.2l-.5.5c-1.5 1.5-.9 3.4.1 5a17.5 17.5 0 0 0 7.7 7.7c1.6 1 3.5 1.6 5 .1l.5-.5c.6-.6.5-1.5-.2-2z"/>
+                <path fill="white" d="M28.4 18.3c2.2.4 3.8 2.1 4.1 4.3.1.5.5.8 1 .7.5-.1.8-.5.7-1-.5-2.9-2.7-5.1-5.5-5.6-.5-.1-1 .3-1.1.8 0 .5.3.8.8.8zm-.2-2.8c3.5.6 6.2 3.3 6.7 6.8.1.5.5.8 1 .7.5-.1.8-.5.7-1-.7-4.2-3.9-7.4-8-8.1-.5-.1-1 .3-1 .8-.1.4.2.8.6.8zm.2 5.7c1 .2 1.7.9 1.8 1.9.1.5.5.8 1 .7.5-.1.8-.5.7-1-.3-1.6-1.5-2.9-3.2-3.2-.5-.1-1 .2-1 .8 0 .4.3.7.7.8z"/>
             </svg>
         </a>
 
-        <!-- WhatsApp -->
-        <a class="contact-btn icon-whatsapp" href="https://wa.me/37368135924" target="_blank" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        <!-- WhatsApp — official icon -->
+        <a class="contact-btn" href="https://wa.me/37368135924" target="_blank" aria-label="WhatsApp">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <rect width="52" height="52" rx="13" fill="#25D366"/>
+                <path fill="white" d="M38 14a18 18 0 0 0-28.1 22L8 40l4.2-1.8A18 18 0 0 0 38 14zm-12 27.9a15 15 0 0 1-8-2.3l-.6-.3-3.5 1.5 1.4-3.5-.4-.6A15 15 0 1 1 26 41.9zm8.4-11.2c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2l-1.4 1.7c-.2.3-.5.3-.9.1-2.5-1.2-4.2-2.2-5.8-4.9-.4-.7.4-.7 1.3-2.3.1-.3 0-.6-.1-.8l-1.4-3.4c-.4-.9-.8-.8-1-.8h-.9c-.3 0-.8.1-1.2.6C17 20.3 16 21.2 16 23.3s1.5 4.4 1.7 4.7c.2.3 3 4.6 7.3 6.4 4.3 1.9 4.3 1.3 5 1.2.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.3-.4-.4-.9-.6z"/>
             </svg>
         </a>
 
         <!-- Phone -->
-        <a class="contact-btn icon-phone" href="tel:+37368135924" aria-label="Call">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        <a class="contact-btn" href="tel:+37368135924" aria-label="Call">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <rect width="52" height="52" rx="13" fill="rgba(255,255,255,0.12)" stroke="rgba(201,168,130,0.4)" stroke-width="1"/>
+                <path fill="white" d="M36.5 31.4l-3.6-1.5a1.5 1.5 0 0 0-1.7.4l-1.5 1.8a23.2 23.2 0 0 1-9.8-9.8L21.7 21a1.5 1.5 0 0 0 .4-1.7l-1.5-3.6A1.5 1.5 0 0 0 19 14.7l-3.3.3A1.5 1.5 0 0 0 14.2 16.5C15 28.5 23.5 37 35.5 37.8a1.5 1.5 0 0 0 1.5-1.4l.3-3.3a1.5 1.5 0 0 0-.8-1.7z"/>
             </svg>
         </a>
 
@@ -442,17 +422,12 @@
                 misses = 0;
                 const idx = loadedImages.length;
                 loadedImages.push(src);
-
                 const item = document.createElement('div');
                 item.className = 'gallery-item';
                 item.onclick = () => openLb(idx);
-
                 const img = document.createElement('img');
-                img.src = src;
-                img.alt = '';
-                img.loading = 'lazy';
+                img.src = src; img.alt = ''; img.loading = 'lazy';
                 img.onload = () => img.classList.add('loaded');
-
                 item.appendChild(img);
                 galleryEl.appendChild(item);
             } else {
