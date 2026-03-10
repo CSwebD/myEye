@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Font Awesome for crisp official brand icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         *, *::before, *::after {
@@ -26,18 +25,82 @@
             --text-dimmer: rgba(255,255,255,0.45);
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             background: var(--crimson-deep);
             min-height: 100vh;
         }
 
+        /* ── MOBILE: single column, full width card ── */
+        .page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ── DESKTOP: two-column side by side ── */
+        @media (min-width: 900px) {
+            body {
+                min-height: 100vh;
+                display: flex;
+                align-items: stretch;
+            }
+
+            .page {
+                flex-direction: row;
+                align-items: stretch;
+                width: 100%;
+                min-height: 100vh;
+            }
+
+            /* Left panel — card */
+            .card-col {
+                width: 400px;
+                min-width: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                background: var(--crimson);
+                min-height: 100vh;
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                overflow-y: auto;
+            }
+
+            /* Right panel — gallery */
+            .gallery-col {
+                flex: 1;
+                padding: 0;
+                overflow-y: auto;
+            }
+        }
+
+        /* ── CARD ── */
         .card {
-            width: min(440px, 96vw);
-            margin: 0 auto;
+            width: 100%;
             background: var(--crimson);
-            overflow: hidden;
             animation: cardReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* On mobile the card is max 440px centered */
+        @media (max-width: 899px) {
+            .card-col {
+                width: min(440px, 96vw);
+            }
+            .card {
+                width: min(440px, 96vw);
+            }
+            .gallery-col {
+                width: min(440px, 96vw);
+            }
         }
 
         @keyframes cardReveal {
@@ -90,7 +153,7 @@
 
         .brand-name {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.55rem, 7.5vw, 2rem);
+            font-size: clamp(1.4rem, 4vw, 1.9rem);
             font-weight: 300;
             letter-spacing: 0.22em;
             color: var(--white);
@@ -129,12 +192,13 @@
             line-height: 1.7;
         }
 
-        /* ── SOCIAL ICONS ── */
+        /* Social icons */
         .contacts {
             padding: 0 30px 32px;
             display: flex;
             justify-content: center;
             gap: 14px;
+            flex-wrap: wrap;
         }
 
         .contact-btn {
@@ -146,8 +210,8 @@
             border-radius: 14px;
             text-decoration: none;
             font-size: 1.55rem;
-            transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), filter 0.2s;
             color: white;
+            transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), filter 0.2s;
         }
 
         .contact-btn:hover,
@@ -159,7 +223,6 @@
         .btn-instagram {
             background: radial-gradient(circle at 30% 110%, #FFDC80 0%, #FCAF45 15%, #F77737 30%, #F56040 45%, #FD1D1D 60%, #E1306C 75%, #C13584 88%, #833AB4 100%);
         }
-
         .btn-facebook  { background: #1877F2; }
         .btn-viber     { background: #7360F2; }
         .btn-whatsapp  { background: #25D366; }
@@ -168,16 +231,18 @@
             border: 1px solid rgba(201,168,130,0.3);
         }
 
-        /* Footer */
+        /* Footer pushed to bottom on desktop */
+        .card-spacer { flex: 1; }
+
         .card-footer {
             background: rgba(0,0,0,0.25);
-            padding: 12px 30px;
+            padding: 14px 30px;
             text-align: center;
         }
 
         .card-footer-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.62rem;
+            font-size: 0.6rem;
             font-weight: 400;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -185,16 +250,22 @@
         }
 
         /* ── GALLERY ── */
-        .gallery-wrap {
-            width: min(440px, 96vw);
-            margin: 3px auto 0;
-            padding-bottom: 40px;
-        }
-
         .gallery-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3px;
+        }
+
+        /* On desktop, 3 columns in the wide right panel */
+        @media (min-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .gallery-item:nth-child(5n) {
+                grid-column: span 2 !important;
+                aspect-ratio: 2 / 1 !important;
+            }
         }
 
         .gallery-item {
@@ -232,7 +303,6 @@
         }
 
         .lightbox.open { display: flex; animation: lbIn 0.2s ease; }
-
         @keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
 
         .lightbox-img {
@@ -274,56 +344,65 @@
         }
 
         .lb-arrow:hover { background: rgba(255,255,255,0.18); }
-        .lb-prev { left: 10px; }
-        .lb-next { right: 10px; }
+        .lb-prev { left: 14px; }
+        .lb-next { right: 14px; }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <div class="lang-bar">
-        <button class="lang-btn active" onclick="switchLang('ro', this)">RO</button>
-        <button class="lang-btn" onclick="switchLang('ru', this)">RU</button>
-        <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
+<div class="page">
+
+    <!-- LEFT: Card -->
+    <div class="card-col">
+        <div class="card">
+            <div class="lang-bar">
+                <button class="lang-btn active" onclick="switchLang('ro', this)">RO</button>
+                <button class="lang-btn" onclick="switchLang('ru', this)">RU</button>
+                <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
+            </div>
+
+            <div class="header">
+                <span class="brand-name">Nail &amp; Brow Studio</span>
+                <span class="brand-sub">by Caterina</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="tagline" id="tagline">
+                Manichiură profesională &amp; laminare<br>gene și sprâncene<br>Chișinău, sec. Botanica
+            </p>
+
+            <div class="contacts">
+                <a class="contact-btn btn-instagram" href="https://instagram.com/lami.studio.by.caterina" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="contact-btn btn-facebook" href="https://www.facebook.com/lamistudio.bycaterina" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a class="contact-btn btn-viber" href="viber://chat?number=%2B37368135924" aria-label="Viber">
+                    <i class="fa-brands fa-viber"></i>
+                </a>
+                <a class="contact-btn btn-whatsapp" href="https://wa.me/37368135924" target="_blank" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a class="contact-btn btn-phone" href="tel:+37368135924" aria-label="Call">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+
+            <div class="card-spacer"></div>
+
+            <div class="card-footer">
+                <p class="card-footer-text" id="footer-text">068 135 924 &nbsp;·&nbsp; Chișinău, sec. Botanica</p>
+            </div>
+        </div>
     </div>
 
-    <div class="header">
-        <span class="brand-name">Nail &amp; Brow Studio</span>
-        <span class="brand-sub">by Caterina</span>
+    <!-- RIGHT: Gallery -->
+    <div class="gallery-col">
+        <div class="gallery-grid" id="gallery"></div>
     </div>
 
-    <div class="divider"></div>
-
-    <p class="tagline" id="tagline">
-        Manichiură profesională &amp; laminare gene și sprâncene<br>Chișinău, sec. Botanica
-    </p>
-
-    <div class="contacts">
-        <a class="contact-btn btn-instagram" href="https://instagram.com/lami.studio.by.caterina" target="_blank" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a class="contact-btn btn-facebook" href="https://www.facebook.com/lamistudio.bycaterina" target="_blank" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a class="contact-btn btn-viber" href="viber://chat?number=%2B37368135924" aria-label="Viber">
-            <i class="fa-brands fa-viber"></i>
-        </a>
-        <a class="contact-btn btn-whatsapp" href="https://wa.me/37368135924" target="_blank" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a class="contact-btn btn-phone" href="tel:+37368135924" aria-label="Call">
-            <i class="fa-solid fa-phone"></i>
-        </a>
-    </div>
-
-    <div class="card-footer">
-        <p class="card-footer-text" id="footer-text">068 135 924 &nbsp;·&nbsp; Chișinău, sec. Botanica</p>
-    </div>
-</div>
-
-<!-- Gallery -->
-<div class="gallery-wrap">
-    <div class="gallery-grid" id="gallery"></div>
 </div>
 
 <!-- Lightbox -->
@@ -337,15 +416,15 @@
 <script>
     const T = {
         ro: {
-            tagline: 'Manichiură profesională & laminare gene și sprâncene\nChișinău, sec. Botanica',
+            tagline: 'Manichiură profesională & laminare\ngene și sprâncene\nChișinău, sec. Botanica',
             footer: '068 135 924 · Chișinău, sec. Botanica'
         },
         ru: {
-            tagline: 'Профессиональный маникюр и ламинирование ресниц и бровей\nКишинёв, р-н Ботаника',
+            tagline: 'Профессиональный маникюр\nи ламинирование ресниц и бровей\nКишинёв, р-н Ботаника',
             footer: '068 135 924 · Кишинёв, р-н Ботаника'
         },
         en: {
-            tagline: 'Professional manicure & lash and brow lamination\nChișinău, Botanica district',
+            tagline: 'Professional manicure\n& lash and brow lamination\nChișinău, Botanica district',
             footer: '068 135 924 · Chișinău, Botanica'
         }
     };
@@ -353,8 +432,7 @@
     function switchLang(lang, btn) {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const lines = T[lang].tagline.split('\n');
-        document.getElementById('tagline').innerHTML = lines.join('<br>');
+        document.getElementById('tagline').innerHTML = T[lang].tagline.split('\n').join('<br>');
         document.getElementById('footer-text').innerHTML = T[lang].footer.replace('·', '&nbsp;·&nbsp;');
     }
 
