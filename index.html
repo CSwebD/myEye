@@ -1,508 +1,624 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nail & Brow Studio | By Caterina</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        *, *::before, *::after {
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nail & Brow Studio | By Caterina — Manichiură, Gene, Sprâncene, Chișinău</title>
+<meta name="description" content="Studio de înfrumusețare în Chișinău, sec. Botanica — manichiură, extensii unghii, laminare și extensii gene, laminare sprâncene. Programări prin Instagram, Viber sau WhatsApp.">
+<meta name="theme-color" content="#ffffff">
 
-        :root {
-            --crimson: #5a0a1a;
-            --crimson-deep: #3d0612;
-            --crimson-mid: #6e1526;
-            --gold: #c9a882;
-            --white: #ffffff;
-            --text-light: rgba(255,255,255,0.75);
-            --text-dimmer: rgba(255,255,255,0.45);
-        }
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Nail & Brow Studio | By Caterina">
+<meta property="og:description" content="Manichiură, gene, sprâncene — Chișinău, sec. Botanica.">
+<meta property="og:image" content="pic01.jpg">
 
-        html, body {
-            height: 100%;
-        }
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233a0712'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23e3c79a' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: var(--crimson-deep);
-            min-height: 100vh;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        /* ── MOBILE: single column, full width card ── */
-        .page {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; }
 
-        /* ── DESKTOP: two-column side by side ── */
-        @media (min-width: 900px) {
-            body {
-                min-height: 100vh;
-                display: flex;
-                align-items: stretch;
-            }
+:root{
+  --ruby:          #6e0d24;
+  --ruby-bright:   #9c1f3a;
+  --ruby-deep:     #3a0712;
+  --ruby-deeper:   #220308;
+  --gold:          #c9a882;
+  --gold-soft:     #a9824f;
+  --ink:           #241012;
+  --ink-soft:      rgba(36,16,18,0.62);
+  --line:          rgba(36,16,18,0.12);
+  --paper:         #ffffff;
+  --cream:         #f7f1e9;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
 
-            .page {
-                flex-direction: row;
-                align-items: stretch;
-                width: 100%;
-                min-height: 100vh;
-            }
+body{ font-family:'Jost', sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
+h1,h2,h3,.serif{ font-family:'Cormorant Garamond', serif; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; }
+::selection{ background: var(--ruby); color: var(--paper); }
 
-            /* Left panel — card */
-            .card-col {
-                width: 400px;
-                min-width: 400px;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                background: var(--crimson);
-                min-height: 100vh;
-                position: sticky;
-                top: 0;
-                height: 100vh;
-                overflow-y: auto;
-            }
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+}
+a:focus-visible, button:focus-visible{ outline:1.5px solid var(--ruby); outline-offset:3px; border-radius:2px; }
 
-            /* Right panel — gallery */
-            .gallery-col {
-                flex: 1;
-                padding: 0;
-                overflow-y: auto;
-            }
-        }
+.container{ max-width:1240px; margin:0 auto; padding:0 32px; }
+.eyebrow{ font-size:0.7rem; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color: var(--ruby); }
+.section-title{ font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight:500; letter-spacing:0.005em; margin-top:10px; color: var(--ink); }
+.section-lede{ max-width:520px; margin-top:16px; font-size:0.98rem; line-height:1.75; color: var(--ink-soft); font-weight:300; }
+section{ position:relative; scroll-margin-top:76px; }
+.pad{ padding:96px 0; }
+@media (max-width:720px){ .pad{ padding:64px 0; } }
 
-        /* ── CARD ── */
-        .card {
-            width: 100%;
-            background: var(--crimson);
-            animation: cardReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.reveal{ opacity:0; transform:translateY(20px); transition:opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+.reveal.in{ opacity:1; transform:translateY(0); }
 
-        /* On mobile the card is max 440px centered */
-        @media (max-width: 899px) {
-            .card-col {
-                width: min(440px, 96vw);
-            }
-            .card {
-                width: min(440px, 96vw);
-            }
-            .gallery-col {
-                width: min(440px, 96vw);
-            }
-        }
+/* NAV */
+.nav{ position:sticky; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:22px 36px; background:linear-gradient(115deg, var(--ruby-deeper) 0%, var(--ruby-deep) 38%, var(--ruby) 72%, var(--gold-soft) 130%); border-bottom:1px solid transparent; transition:box-shadow 0.35s var(--ease), padding 0.35s var(--ease), border-color 0.35s var(--ease); }
+.nav.solid{ box-shadow:0 8px 30px rgba(36,16,18,0.22); padding:15px 36px; border-color:rgba(201,168,130,0.3); }
+.nav-brand{ font-family:'Cormorant Garamond',serif; font-size:1.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--cream); font-weight:600; text-shadow:0 2px 14px rgba(0,0,0,0.3); transition:font-size 0.25s var(--ease); }
+.nav-brand span{ color:var(--gold); }
+.nav-links{ display:flex; gap:32px; list-style:none; }
+.nav-links a{ font-size:0.76rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:rgba(247,241,233,0.82); position:relative; padding:4px 0; transition:color 0.25s var(--ease); }
+.nav-links a::after{ content:''; position:absolute; left:0; bottom:-3px; width:0; height:1px; background:var(--gold); transition:width 0.3s var(--ease); }
+.nav-links a:hover{ color:var(--paper); }
+.nav-links a:hover::after{ width:100%; }
+.nav-right{ display:flex; align-items:center; gap:22px; }
+.nav-icon{ font-size:1rem; color:var(--cream); transition:color 0.25s var(--ease); }
+.nav-icon:hover{ color:var(--gold); }
+.nav-cta{ display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--ruby-deep); background:var(--paper); padding:11px 22px; border-radius:1px; transition:background 0.25s var(--ease), transform 0.25s var(--ease); }
+.nav-cta:hover{ background:var(--gold); transform:translateY(-1px); }
+.lang-switch{ display:flex; align-items:center; gap:2px; margin-right:18px; padding:3px; border:1px solid rgba(247,241,233,0.32); border-radius:20px; }
+.lang-switch button{ background:none; border:none; font-size:0.66rem; font-weight:600; letter-spacing:0.04em; color:rgba(247,241,233,0.75); padding:5px 10px; border-radius:16px; transition:color 0.25s var(--ease), background 0.25s var(--ease); }
+.lang-switch button.active{ color:var(--ruby-deep); background:var(--gold); }
+.lang-switch button:hover:not(.active){ color:var(--paper); }
+.mobile-menu .lang-switch{ margin-right:0; margin-top:6px; border-color:rgba(36,16,18,0.18); }
+.burger{ display:none; flex-direction:column; gap:5px; background:none; border:none; padding:6px; }
+.burger span{ width:22px; height:1.5px; background:var(--cream); transition:all 0.3s var(--ease); }
+.mobile-menu{ position:fixed; inset:0; background:var(--paper); z-index:199; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px; transform:translateY(-100%); transition:transform 0.5s var(--ease); opacity:0; }
+.mobile-menu.open{ transform:translateY(0); opacity:1; }
+.mobile-menu a{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--ink); }
+.mobile-menu a:hover{ color:var(--ruby); }
+@media (max-width:900px){ .nav-links{ display:none; } .nav-right .nav-cta{ display:none; } .burger{ display:flex; } }
 
-        @keyframes cardReveal {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+/* ============ HERO: 4-SQUARE MOSAIC ============ */
+.hero{ padding:20px 20px 0; }
+.hero-grid{ display:grid; grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(2,minmax(280px,42vh)); gap:14px; max-width:1240px; margin:0 auto; }
+@media (max-width:760px){ .hero-grid{ grid-template-columns:1fr; grid-template-rows:none; gap:12px; } }
 
-        /* Lang */
-        .lang-bar {
-            display: flex;
-            justify-content: flex-end;
-            gap: 4px;
-            padding: 14px 18px 0;
-        }
+.hero-cell{ position:relative; overflow:hidden; border-radius:2px; }
+.hero-cell img{ width:100%; height:100%; object-fit:cover; transition:transform 0.7s var(--ease); }
+.hero-cell:hover img{ transform:scale(1.05); }
 
-        .lang-btn {
-            background: none;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 500;
-            letter-spacing: 1.8px;
-            text-transform: uppercase;
-            color: var(--text-dimmer);
-            cursor: pointer;
-            padding: 4px 8px;
-            position: relative;
-            transition: color 0.2s ease;
-        }
+.hero-info{ background: radial-gradient(140% 130% at 15% 0%, var(--ruby) 0%, var(--ruby-deep) 55%, var(--ruby-deeper) 100%); color:var(--cream); display:flex; flex-direction:column; justify-content:center; padding:52px; }
+@media (max-width:760px){ .hero-info{ padding:56px 32px; min-height:60vh; } }
+.hero-eyebrow{ font-size:0.72rem; font-weight:500; letter-spacing:0.32em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:14px; }
+.hero-eyebrow::before{ content:''; width:30px; height:1px; background:var(--gold); }
+.hero-info h1{ margin-top:22px; font-size:clamp(2rem, 3.4vw, 2.9rem); font-weight:500; line-height:1.1; }
+.hero-info h1 em{ font-style:italic; color:var(--gold); font-weight:400; }
+.hero-sub{ margin-top:18px; max-width:380px; font-size:0.94rem; line-height:1.8; color:rgba(247,241,233,0.8); font-weight:300; }
+.hero-actions{ margin-top:28px; display:flex; gap:12px; flex-wrap:wrap; }
+.btn{ display:inline-flex; align-items:center; gap:10px; padding:14px 24px; font-size:0.7rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; border-radius:1px; transition:all 0.3s var(--ease); border:1px solid transparent; }
+.btn-solid{ background:var(--paper); color:var(--ruby-deep); }
+.btn-solid:hover{ background:var(--gold); transform:translateY(-2px); }
+.btn-outline{ border-color:rgba(247,241,233,0.4); color:var(--cream); }
+.btn-outline:hover{ border-color:var(--gold); color:var(--gold); }
+.hero-stat{ margin-top:34px; padding-top:22px; border-top:1px solid rgba(201,168,130,0.25); }
+.hero-stat b{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--gold); display:block; }
+.hero-stat span{ font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(247,241,233,0.65); }
 
-        .lang-btn::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 0; height: 1px;
-            background: var(--gold);
-            transition: width 0.25s ease;
-        }
+.hero-brand{ background: radial-gradient(140% 130% at 15% 0%, var(--ruby) 0%, var(--ruby-deep) 55%, var(--ruby-deeper) 100%); display:flex; align-items:center; justify-content:center; padding:32px; }
+.hero-brand-mark{ font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem, 3vw, 2.5rem); letter-spacing:0.1em; text-transform:uppercase; color:var(--cream); text-align:center; font-weight:600; line-height:1.25; }
+.hero-brand-mark span{ color:var(--gold); font-style:italic; font-weight:400; }
 
-        .lang-btn.active { color: var(--gold); }
-        .lang-btn.active::after { width: 70%; }
-        .lang-btn:hover { color: rgba(255,255,255,0.7); }
+/* ============ SERVICII: 6 CERCURI ============ */
+.services{ background:var(--paper); text-align:center; }
+.services .eyebrow, .services .section-lede{ margin-left:auto; margin-right:auto; }
+.services .section-lede{ text-align:center; }
+.circ-row{ margin-top:52px; display:flex; justify-content:center; gap:38px; flex-wrap:wrap; }
+.circ-item{ display:flex; flex-direction:column; align-items:center; gap:16px; width:132px; }
+.circ-photo{ width:118px; height:118px; border-radius:50%; overflow:hidden; background:var(--ruby-deep); box-shadow:0 10px 26px rgba(36,16,18,0.12); transition:transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+.circ-item:hover .circ-photo{ transform:translateY(-6px); box-shadow:0 16px 34px rgba(36,16,18,0.18); }
+.circ-photo img{ width:100%; height:100%; object-fit:cover; }
+.circ-item span{ font-size:0.82rem; font-weight:500; letter-spacing:0.02em; color:var(--ink); text-align:center; line-height:1.3; }
 
-        /* Brand */
-        .header {
-            padding: 30px 30px 28px;
-            text-align: center;
-        }
+/* ============ PRETURI ============ */
+.prices{ background:var(--cream); }
+.prices .eyebrow, .prices .section-lede{ margin-left:auto; margin-right:auto; }
+.prices .section-lede{ text-align:center; }
+.price-list{ max-width:640px; margin:52px auto 0; display:flex; flex-direction:column; }
+.price-row{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:20px 4px; border-bottom:1px solid var(--line); }
+.price-row:last-child{ border-bottom:none; }
+.price-name{ font-family:'Cormorant Garamond',serif; font-size:1.18rem; font-weight:500; color:var(--ink); }
+.price-value{ font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--ruby); white-space:nowrap; }
+.price-note{ margin-top:28px; text-align:center; font-size:0.82rem; color:var(--ink-soft); font-weight:300; }
 
-        .brand-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.4rem, 4vw, 1.9rem);
-            font-weight: 300;
-            letter-spacing: 0.22em;
-            color: var(--white);
-            text-transform: uppercase;
-            line-height: 1.1;
-            margin-bottom: 6px;
-            transform: scaleX(1.05);
-            display: inline-block;
-        }
+/* ============ GALERIE: 9 POZE ============ */
+.gallery-section{ background:var(--cream); }
+.gallery-grid{ margin-top:48px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media (max-width:760px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:480px){ .gallery-grid{ grid-template-columns:1fr; } }
+.gallery-item{ position:relative; overflow:hidden; border-radius:2px; cursor:zoom-in; aspect-ratio:1; background:var(--paper); }
+.gallery-item img{ width:100%; height:100%; object-fit:cover; transition:transform 0.6s var(--ease); }
+.gallery-item:hover img{ transform:scale(1.06); }
+.gallery-item .zoom-icon{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(36,16,18,0.28); opacity:0; transition:opacity 0.3s var(--ease); color:var(--paper); font-size:1.2rem; }
+.gallery-item:hover .zoom-icon{ opacity:1; }
 
-        .brand-sub {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 400;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: var(--gold);
-            display: block;
-            margin-top: 2px;
-        }
+.gallery-more{ margin-top:36px; display:flex; align-items:center; justify-content:center; gap:12px; }
+.gallery-more p{ font-size:0.9rem; color:var(--ink-soft); font-weight:300; }
+.ig-link{ display:inline-flex; align-items:center; gap:10px; font-size:0.72rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--paper); padding:13px 24px; border-radius:1px; background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); transition:transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.ig-link:hover{ transform:translateY(-2px); box-shadow:0 12px 26px rgba(220,39,67,0.3); }
 
-        .divider {
-            height: 1px;
-            margin: 0 30px;
-            background: rgba(201,168,130,0.25);
-        }
+.lightbox{ position:fixed; inset:0; background:rgba(15,2,5,0.94); z-index:400; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.35s var(--ease); }
+.lightbox.open{ opacity:1; pointer-events:auto; }
+.lightbox-img{ max-width:88vw; max-height:86vh; border-radius:2px; box-shadow:0 30px 80px rgba(0,0,0,0.5); }
+.lightbox-close{ position:fixed; top:18px; right:22px; background:none; border:none; color:rgba(247,241,233,0.65); font-size:1.7rem; cursor:pointer; line-height:1; }
+.lightbox-close:hover{ color:var(--paper); }
+.lb-counter{ position:fixed; top:24px; left:24px; font-size:0.68rem; letter-spacing:1.5px; color:rgba(247,241,233,0.5); }
+.lb-arrow{ position:fixed; top:50%; transform:translateY(-50%); background:rgba(247,241,233,0.06); border:1px solid rgba(201,168,130,0.25); color:var(--paper); font-size:1.4rem; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.lb-arrow:hover{ background:rgba(201,168,130,0.16); border-color:rgba(201,168,130,0.55); }
+.lb-prev{ left:16px; } .lb-next{ right:16px; }
 
-        .tagline {
-            text-align: center;
-            padding: 20px 30px 24px;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
-            font-size: 0.88rem;
-            color: var(--text-light);
-            letter-spacing: 0.04em;
-            line-height: 1.7;
-        }
+/* ============ CONTACT ============ */
+.contact{ background:radial-gradient(120% 100% at 15% 0%, var(--ruby) 0%, var(--ruby-deep) 55%, var(--ruby-deeper) 100%); color:var(--cream); }
+.contact .eyebrow{ color:var(--gold); }
+.contact .section-title{ color:var(--cream); }
+.contact .section-lede{ color:rgba(247,241,233,0.78); }
+.contact-inner{ max-width:560px; margin:0 auto; text-align:center; }
+.contact-inner .eyebrow, .contact-inner .section-lede{ margin-left:auto; margin-right:auto; }
+.contact-list{ margin-top:32px; display:flex; flex-direction:column; gap:18px; align-items:center; }
+.contact-row{ display:flex; gap:14px; align-items:center; }
+.contact-row i{ color:var(--gold); font-size:1.05rem; width:20px; text-align:center; }
+.contact-row b{ font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-soft); margin-right:6px; }
+.contact-row span, .contact-row a{ color:var(--cream); font-size:0.98rem; font-weight:300; }
+.contact-row a:hover{ color:var(--gold); }
+.social-row{ display:flex; justify-content:center; gap:14px; margin-top:36px; }
+.social-btn{ width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem; transition:transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.social-btn:hover{ transform:translateY(-4px); box-shadow:0 12px 26px rgba(0,0,0,0.3); }
+.social-btn.ig{ background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+.social-btn.fb{ background:#1877F2; }
+.social-btn.vb{ background:#7360F2; }
+.social-btn.wa{ background:#25D366; }
+.social-btn.ph{ background:var(--gold); color:var(--ruby-deep); }
 
-        /* Social icons */
-        .contacts {
-            padding: 0 30px 32px;
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 54px;
-            height: 54px;
-            border-radius: 14px;
-            text-decoration: none;
-            font-size: 1.55rem;
-            color: white;
-            transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), filter 0.2s;
-        }
-
-        .contact-btn:hover,
-        .contact-btn:active {
-            transform: translateY(-4px) scale(1.1);
-            filter: brightness(1.1);
-        }
-
-        .btn-instagram {
-            background: radial-gradient(circle at 30% 110%, #FFDC80 0%, #FCAF45 15%, #F77737 30%, #F56040 45%, #FD1D1D 60%, #E1306C 75%, #C13584 88%, #833AB4 100%);
-        }
-        .btn-facebook  { background: #1877F2; }
-        .btn-viber     { background: #7360F2; }
-        .btn-whatsapp  { background: #25D366; }
-        .btn-phone {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(201,168,130,0.3);
-        }
-
-        /* Footer pushed to bottom on desktop */
-        .card-spacer { flex: 1; }
-
-        .card-footer {
-            background: rgba(0,0,0,0.25);
-            padding: 14px 30px;
-            text-align: center;
-        }
-
-        .card-footer-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.6rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-dimmer);
-        }
-
-        /* ── GALLERY ── */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3px;
-        }
-
-        /* On desktop, 3 columns in the wide right panel */
-        @media (min-width: 900px) {
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-
-            .gallery-item:nth-child(5n) {
-                grid-column: span 2 !important;
-                aspect-ratio: 2 / 1 !important;
-            }
-        }
-
-        .gallery-item {
-            overflow: hidden;
-            background: var(--crimson-mid);
-            aspect-ratio: 1 / 1;
-            cursor: pointer;
-        }
-
-        .gallery-item:nth-child(5n) {
-            grid-column: span 2;
-            aspect-ratio: 2 / 1;
-        }
-
-        .gallery-item img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            display: block;
-            opacity: 0;
-            transition: transform 0.5s ease, opacity 0.4s ease;
-        }
-
-        .gallery-item img.loaded { opacity: 1; }
-        .gallery-item:hover img  { transform: scale(1.06); }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            background: rgba(15, 2, 6, 0.95);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox.open { display: flex; animation: lbIn 0.2s ease; }
-        @keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .lightbox-img {
-            max-width: 92vw;
-            max-height: 88vh;
-            object-fit: contain;
-            border-radius: 2px;
-        }
-
-        .lightbox-close {
-            position: fixed;
-            top: 16px; right: 20px;
-            background: none; border: none;
-            color: rgba(255,255,255,0.6);
-            font-size: 1.8rem;
-            cursor: pointer;
-            line-height: 1;
-            transition: color 0.2s;
-            font-family: sans-serif;
-        }
-
-        .lightbox-close:hover { color: white; }
-
-        .lb-arrow {
-            position: fixed;
-            top: 50%; transform: translateY(-50%);
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: white;
-            font-size: 1.5rem;
-            width: 44px; height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-            font-family: sans-serif;
-        }
-
-        .lb-arrow:hover { background: rgba(255,255,255,0.18); }
-        .lb-prev { left: 14px; }
-        .lb-next { right: 14px; }
-    </style>
+footer{ background:var(--ruby-deeper); padding:26px 0; text-align:center; }
+footer p{ font-size:0.68rem; letter-spacing:0.06em; color:rgba(247,241,233,0.45); }
+footer p b{ color:var(--gold); font-weight:500; }
+</style>
 </head>
 <body>
 
-<div class="page">
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-brand">Nail<span> &amp; Brow</span> Studio</a>
+  <ul class="nav-links">
+    <li><a href="#servicii" data-i18n="nav_servicii">Servicii</a></li>
+    <li><a href="#preturi" data-i18n="nav_preturi">Prețuri</a></li>
+    <li><a href="#galerie" data-i18n="nav_galerie">Galerie</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="lang-switch" id="langSwitch" role="group" aria-label="Limbă / Language / Язык">
+    <button type="button" data-lang="ro">RO</button>
+    <button type="button" data-lang="ru">RU</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Meniu" data-i18n-aria="aria_menu"><span></span><span></span><span></span></button>
+</nav>
 
-    <!-- LEFT: Card -->
-    <div class="card-col">
-        <div class="card">
-            <div class="lang-bar">
-                <button class="lang-btn active" onclick="switchLang('ro', this)">RO</button>
-                <button class="lang-btn" onclick="switchLang('ru', this)">RU</button>
-                <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
-            </div>
-
-            <div class="header">
-                <span class="brand-name">Nail &amp; Brow Studio</span>
-                <span class="brand-sub">by Caterina</span>
-            </div>
-
-            <div class="divider"></div>
-
-            <p class="tagline" id="tagline">
-                Manichiură profesională,<br>laminare gene și sprâncene<br>Chișinău, sec. Botanica
-            </p>
-
-            <div class="contacts">
-                <a class="contact-btn btn-instagram" href="https://instagram.com/lami.studio.by.caterina" target="_blank" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a class="contact-btn btn-facebook" href="https://www.facebook.com/lamistudio.bycaterina" target="_blank" aria-label="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a class="contact-btn btn-viber" href="viber://chat?number=%2B37368135924" aria-label="Viber">
-                    <i class="fa-brands fa-viber"></i>
-                </a>
-                <a class="contact-btn btn-whatsapp" href="https://wa.me/37368135924" target="_blank" aria-label="WhatsApp">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <a class="contact-btn btn-phone" href="tel:+37368135924" aria-label="Call">
-                    <i class="fa-solid fa-phone"></i>
-                </a>
-            </div>
-
-            <div class="card-spacer"></div>
-
-            <div class="card-footer">
-                <p class="card-footer-text" id="footer-text">068 135 924 &nbsp;·&nbsp; Chișinău, sec. Botanica</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- RIGHT: Gallery -->
-    <div class="gallery-col">
-        <div class="gallery-grid" id="gallery"></div>
-    </div>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicii" data-i18n="nav_servicii">Servicii</a>
+  <a href="#preturi" data-i18n="nav_preturi">Prețuri</a>
+  <a href="#galerie" data-i18n="nav_galerie">Galerie</a>
+  <a href="#contact" data-i18n="nav_contact">Contact</a>
+  <div class="lang-switch" id="langSwitchMobile" role="group" aria-label="Limbă / Language / Язык">
+    <button type="button" data-lang="ro">RO</button>
+    <button type="button" data-lang="ru">RU</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
 </div>
 
-<!-- Lightbox -->
+<!-- ============ HERO: 4 SQUARES ============ -->
+<section id="top" class="hero">
+  <div class="hero-grid reveal">
+    <div class="hero-cell hero-info">
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">Chișinău · Sec. Botanica</div>
+      <h1 data-i18n-html="hero_h1">Frumusețea stă<br>în <em>detalii.</em></h1>
+      <p class="hero-sub" data-i18n="hero_sub">Manichiură, extensii de unghii, gene și sprâncene — realizate cu grijă și materiale premium, în studioul Caterinei.</p>
+      <div class="hero-actions">
+        <a class="btn btn-outline" href="#galerie" data-i18n="hero_btn">Vezi galeria</a>
+      </div>
+      <div class="hero-stat">
+        <b>1500+</b>
+        <span data-i18n="hero_stat_label">Cliente mulțumite</span>
+      </div>
+    </div>
+    <div class="hero-cell">
+      <img src="images/pic2.jpg" alt="Manichiură realizată în studio" onerror="this.parentElement.style.background='var(--cream)'; this.remove()">
+    </div>
+    <div class="hero-cell">
+      <img src="images/pic18.jpg" alt="Detaliu extensii unghii" onerror="this.parentElement.style.background='var(--cream)'; this.remove()">
+    </div>
+    <div class="hero-cell hero-brand">
+      <div class="hero-brand-mark">Nail<span> &amp; Brow</span> Studio</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICII: 6 CERCURI ============ -->
+<section class="services pad" id="servicii">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="services_eyebrow">Servicii</div>
+      <h2 class="section-title" data-i18n="services_title">Ce facem</h2>
+      <p class="section-lede" data-i18n="services_lede">De la o manichiură simplă până la un look complet — unghii, gene, sprâncene — totul într-o singură vizită.</p>
+    </div>
+
+    <div class="circ-row reveal">
+      <div class="circ-item">
+        <span class="circ-photo"><img src="images/pic4.jpg" alt="" onerror="this.parentElement.style.background='var(--ruby-deep)'; this.remove()"></span>
+        <span data-i18n="service_manichiura">Manichiură &amp; Unghii</span>
+      </div>
+      <div class="circ-item">
+        <span class="circ-photo"><img src="images/pic8.jpg" alt="" onerror="this.parentElement.style.background='var(--ruby-deep)'; this.remove()"></span>
+        <span data-i18n="service_extensii">Extensii Unghii</span>
+      </div>
+      <div class="circ-item">
+        <span class="circ-photo"><img src="images/pic29.jpeg" alt="" onerror="this.parentElement.style.background='var(--ruby-deep)'; this.remove()"></span>
+        <span data-i18n="service_pedichiura">Pedichiură</span>
+      </div>
+      <div class="circ-item">
+        <span class="circ-photo"><img src="images/pic17.jpg" alt="" onerror="this.parentElement.style.background='var(--ruby-deep)'; this.remove()"></span>
+        <span data-i18n="service_sprancene">Sprâncene</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRETURI ============ -->
+<section class="prices pad" id="preturi">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="prices_eyebrow">Prețuri</div>
+      <h2 class="section-title" data-i18n="prices_title">Listă de prețuri</h2>
+      <p class="section-lede" data-i18n="prices_lede">Prețuri orientative — costul final poate varia în funcție de complexitate și materialele folosite.</p>
+    </div>
+
+    <div class="price-list reveal">
+      <div class="price-row"><span class="price-name" data-i18n="price_1_name">Manichiură clasică</span><span class="price-value">250 MDL</span></div>
+      <div class="price-row"><span class="price-name" data-i18n="price_2_name">Manichiură cu gel</span><span class="price-value">350 MDL</span></div>
+      <div class="price-row"><span class="price-name" data-i18n="price_3_name">Extensii unghii</span><span class="price-value">450 MDL</span></div>
+      <div class="price-row"><span class="price-name" data-i18n="price_4_name">Pedichiură clasică</span><span class="price-value">300 MDL</span></div>
+      <div class="price-row"><span class="price-name" data-i18n="price_5_name">Pedichiură cu gel</span><span class="price-value">400 MDL</span></div>
+      <div class="price-row"><span class="price-name" data-i18n="price_6_name">Corectare sprâncene</span><span class="price-value">150 MDL</span></div>
+      <div class="price-row"><span class="price-name" data-i18n="price_7_name">Laminare sprâncene</span><span class="price-value">250 MDL</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE: 9 POZE ============ -->
+<section class="gallery-section pad" id="galerie">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="gallery_eyebrow">Galerie</div>
+      <h2 class="section-title" data-i18n="gallery_title">Lucrări recente</h2>
+      <p class="section-lede" data-i18n="gallery_lede">O selecție de nouă lucrări din studio — atinge orice fotografie pentru a o vedea mărită.</p>
+    </div>
+    <div class="gallery-grid reveal" id="gallery">
+      <!-- 9 fotografii: images/pic1.jpg – images/pic9.jpg -->
+    </div>
+    <div class="gallery-more reveal">
+      <a class="ig-link" href="https://instagram.com/lami.studio.by.caterina" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> <span data-i18n="gallery_ig_link">Mai multe pe Instagram</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact pad" id="contact">
+  <div class="container contact-inner">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="contact_eyebrow">Contact</div>
+      <h2 class="section-title" data-i18n="contact_title">Hai să ne cunoaștem</h2>
+      <p class="section-lede" data-i18n="contact_lede">Scrie-ne pentru o programare sau treci pe la studio — te așteptăm cu drag.</p>
+    </div>
+
+    <div class="contact-list reveal">
+      <div class="contact-row"><i class="fa-solid fa-location-dot"></i><span><b data-i18n="contact_address_label">Adresă</b><span data-i18n="contact_address_value">Chișinău, sec. Botanica</span></span></div>
+      <div class="contact-row"><i class="fa-solid fa-phone"></i><span><b data-i18n="contact_phone_label">Telefon</b></span><a href="tel:+37368135924">068 135 924</a></div>
+    </div>
+
+    <div class="social-row reveal">
+      <a class="social-btn ig" href="https://instagram.com/lami.studio.by.caterina" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="social-btn fb" href="https://www.facebook.com/lamistudio.bycaterina" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a class="social-btn vb" href="viber://chat?number=%2B37368135924" aria-label="Viber"><i class="fa-brands fa-viber"></i></a>
+      <a class="social-btn wa" href="https://wa.me/37368135924" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="social-btn ph" href="tel:+37368135924" aria-label="Telefon"><i class="fa-solid fa-phone"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> <b>Nail &amp; Brow Studio</b> by Caterina — <span data-i18n="footer_location">Chișinău, sec. Botanica</span></p>
+</footer>
+
 <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" onclick="closeLb()">✕</button>
-    <button class="lb-arrow lb-prev" onclick="shiftLb(-1)">‹</button>
-    <img class="lightbox-img" id="lb-img" src="" alt="">
-    <button class="lb-arrow lb-next" onclick="shiftLb(1)">›</button>
+  <span class="lb-counter" id="lb-counter"></span>
+  <button class="lightbox-close" onclick="closeLb()" aria-label="Închide" data-i18n-aria="aria_close">✕</button>
+  <button class="lb-arrow lb-prev" onclick="shiftLb(-1)" aria-label="Anterior" data-i18n-aria="aria_prev">‹</button>
+  <img class="lightbox-img" id="lb-img" src="" alt="">
+  <button class="lb-arrow lb-next" onclick="shiftLb(1)" aria-label="Următor" data-i18n-aria="aria_next">›</button>
 </div>
 
 <script>
-    const T = {
-        ro: {
-            tagline: 'Manichiură profesională,\nlaminare gene și sprâncene\nChișinău, sec. Botanica',
-            footer: '068 135 924 · Chișinău, sec. Botanica'
-        },
-        ru: {
-            tagline: 'Профессиональный маникюр,\nламинирование ресниц и бровей\nКишинёв, р-н Ботаника',
-            footer: '068 135 924 · Кишинёв, р-н Ботаника'
-        },
-        en: {
-            tagline: 'Professional manicure,\nlash & brow lamination\nChișinău, Botanica district',
-            footer: '068 135 924 · Chișinău, Botanica'
-        }
-    };
+document.getElementById('year').textContent = new Date().getFullYear();
 
-    function switchLang(lang, btn) {
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('tagline').innerHTML = T[lang].tagline.split('\n').join('<br>');
-        document.getElementById('footer-text').innerHTML = T[lang].footer.replace('·', '&nbsp;·&nbsp;');
-    }
+/* ===== I18N: RO / RU / EN ===== */
+const translations = {
+  ro: {
+    page_title: "Nail & Brow Studio | By Caterina — Manichiură, Gene, Sprâncene, Chișinău",
+    meta_description: "Studio de înfrumusețare în Chișinău, sec. Botanica — manichiură, extensii unghii, laminare și extensii gene, laminare sprâncene. Programări prin Instagram, Viber sau WhatsApp.",
+    og_title: "Nail & Brow Studio | By Caterina",
+    og_description: "Manichiură, gene, sprâncene — Chișinău, sec. Botanica.",
+    nav_servicii: "Servicii",
+    nav_preturi: "Prețuri",
+    nav_galerie: "Galerie",
+    nav_contact: "Contact",
+    hero_eyebrow: "Chișinău · Sec. Botanica",
+    hero_h1: "Frumusețea stă<br>în <em>detalii.</em>",
+    hero_sub: "Manichiură, extensii de unghii, gene și sprâncene — realizate cu grijă și materiale premium, în studioul Caterinei.",
+    hero_btn: "Vezi galeria",
+    hero_stat_label: "Cliente mulțumite",
+    services_eyebrow: "Servicii",
+    services_title: "Ce facem",
+    services_lede: "De la o manichiură simplă până la un look complet — unghii, gene, sprâncene — totul într-o singură vizită.",
+    service_manichiura: "Manichiură &amp; Unghii",
+    service_pedichiura: "Pedichiură",
+    service_extensii: "Extensii Unghii",
+    service_gene: "Gene",
+    service_sprancene: "Sprâncene",
+    service_nailart: "Nail Art",
+    prices_eyebrow: "Prețuri",
+    prices_title: "Listă de prețuri",
+    prices_lede: "Prețuri orientative — costul final poate varia în funcție de complexitate și materialele folosite.",
+    price_1_name: "Manichiură clasică",
+    price_2_name: "Manichiură cu gel",
+    price_3_name: "Extensii unghii",
+    price_4_name: "Pedichiură clasică",
+    price_5_name: "Pedichiură cu gel",
+    price_6_name: "Corectare sprâncene",
+    price_7_name: "Laminare sprâncene",
+    gallery_eyebrow: "Galerie",
+    gallery_title: "Lucrări recente",
+    gallery_lede: "O selecție de nouă lucrări din studio — atinge orice fotografie pentru a o vedea mărită.",
+    gallery_ig_link: "Mai multe pe Instagram",
+    contact_eyebrow: "Contact",
+    contact_title: "Hai să ne cunoaștem",
+    contact_lede: "Scrie-ne pentru o programare sau treci pe la studio — te așteptăm cu drag.",
+    contact_address_label: "Adresă",
+    contact_address_value: "Chișinău, sec. Botanica",
+    contact_phone_label: "Telefon",
+    footer_location: "Chișinău, sec. Botanica",
+    aria_menu: "Meniu",
+    aria_close: "Închide",
+    aria_prev: "Anterior",
+    aria_next: "Următor"
+  },
+  ru: {
+    page_title: "Nail & Brow Studio | By Caterina — Маникюр, Ресницы, Брови, Кишинёв",
+    meta_description: "Студия красоты в Кишинёве, сектор Ботаника — маникюр, наращивание ногтей, ламинирование и наращивание ресниц, ламинирование бровей. Запись через Instagram, Viber или WhatsApp.",
+    og_title: "Nail & Brow Studio | By Caterina",
+    og_description: "Маникюр, ресницы, брови — Кишинёв, сектор Ботаника.",
+    nav_servicii: "Услуги",
+    nav_preturi: "Цены",
+    nav_galerie: "Галерея",
+    nav_contact: "Контакты",
+    hero_eyebrow: "Кишинёв · Сектор Ботаника",
+    hero_h1: "Красота кроется<br>в <em>деталях.</em>",
+    hero_sub: "Маникюр, наращивание ногтей, ресницы и брови — с вниманием к деталям и премиальными материалами, в студии Катерины.",
+    hero_btn: "Смотреть галерею",
+    hero_stat_label: "Довольных клиенток",
+    services_eyebrow: "Услуги",
+    services_title: "Что мы делаем",
+    services_lede: "От простого маникюра до полного образа — ногти, ресницы, брови — всё за один визит.",
+    service_manichiura: "Маникюр &amp; Ногти",
+    service_pedichiura: "Педикюр",
+    service_extensii: "Наращивание ногтей",
+    service_gene: "Ресницы",
+    service_sprancene: "Брови",
+    service_nailart: "Дизайн ногтей",
+    prices_eyebrow: "Цены",
+    prices_title: "Прайс-лист",
+    prices_lede: "Ориентировочные цены — окончательная стоимость может отличаться в зависимости от сложности и используемых материалов.",
+    price_1_name: "Классический маникюр",
+    price_2_name: "Маникюр с гель-лаком",
+    price_3_name: "Наращивание ногтей",
+    price_4_name: "Классический педикюр",
+    price_5_name: "Педикюр с гель-лаком",
+    price_6_name: "Коррекция бровей",
+    price_7_name: "Ламинирование бровей",
+    gallery_eyebrow: "Галерея",
+    gallery_title: "Последние работы",
+    gallery_lede: "Подборка из девяти работ студии — нажмите на любое фото, чтобы увеличить.",
+    gallery_ig_link: "Больше в Instagram",
+    contact_eyebrow: "Контакты",
+    contact_title: "Давайте знакомиться",
+    contact_lede: "Напишите нам, чтобы записаться, или заходите в студию — будем рады вас видеть.",
+    contact_address_label: "Адрес",
+    contact_address_value: "Кишинёв, сектор Ботаника",
+    contact_phone_label: "Телефон",
+    footer_location: "Кишинёв, сектор Ботаника",
+    aria_menu: "Меню",
+    aria_close: "Закрыть",
+    aria_prev: "Назад",
+    aria_next: "Вперёд"
+  },
+  en: {
+    page_title: "Nail & Brow Studio | By Caterina — Manicure, Lashes, Brows, Chisinau",
+    meta_description: "Beauty studio in Chisinau, Botanica sector — manicure, nail extensions, lash lamination and extensions, brow lamination. Book via Instagram, Viber or WhatsApp.",
+    og_title: "Nail & Brow Studio | By Caterina",
+    og_description: "Manicure, lashes, brows — Chisinau, Botanica sector.",
+    nav_servicii: "Services",
+    nav_preturi: "Prices",
+    nav_galerie: "Gallery",
+    nav_contact: "Contact",
+    hero_eyebrow: "Chisinau · Botanica Sector",
+    hero_h1: "Beauty is in<br>the <em>details.</em>",
+    hero_sub: "Manicure, nail extensions, lashes and brows — done with care and premium materials, in Caterina's studio.",
+    hero_btn: "View gallery",
+    hero_stat_label: "Happy clients",
+    services_eyebrow: "Services",
+    services_title: "What we do",
+    services_lede: "From a simple manicure to a complete look — nails, lashes, brows — all in a single visit.",
+    service_manichiura: "Manicure &amp; Nails",
+    service_pedichiura: "Pedicure",
+    service_extensii: "Nail Extensions",
+    service_gene: "Lashes",
+    service_sprancene: "Brows",
+    service_nailart: "Nail Art",
+    prices_eyebrow: "Prices",
+    prices_title: "Price list",
+    prices_lede: "Indicative prices — final cost may vary depending on complexity and materials used.",
+    price_1_name: "Classic manicure",
+    price_2_name: "Gel manicure",
+    price_3_name: "Nail extensions",
+    price_4_name: "Classic pedicure",
+    price_5_name: "Gel pedicure",
+    price_6_name: "Brow shaping",
+    price_7_name: "Brow lamination",
+    gallery_eyebrow: "Gallery",
+    gallery_title: "Recent work",
+    gallery_lede: "A selection of nine pieces of work from the studio — tap any photo to enlarge it.",
+    gallery_ig_link: "More on Instagram",
+    contact_eyebrow: "Contact",
+    contact_title: "Let's get in touch",
+    contact_lede: "Message us to book an appointment, or stop by the studio — we'd love to see you.",
+    contact_address_label: "Address",
+    contact_address_value: "Chisinau, Botanica sector",
+    contact_phone_label: "Phone",
+    footer_location: "Chisinau, Botanica sector",
+    aria_menu: "Menu",
+    aria_close: "Close",
+    aria_prev: "Previous",
+    aria_next: "Next"
+  }
+};
 
-    /* Auto gallery */
-    const galleryEl = document.getElementById('gallery');
-    const loadedImages = [];
-    let lbIndex = 0;
+function applyLanguage(lang) {
+  if (!translations[lang]) lang = 'ro';
+  const t = translations[lang];
 
-    function probeImage(src) {
-        return new Promise(resolve => {
-            const img = new Image();
-            img.onload  = () => resolve(true);
-            img.onerror = () => resolve(false);
-            img.src = src;
-        });
-    }
+  document.documentElement.lang = lang;
+  document.title = t.page_title;
 
-    async function buildGallery() {
-        let misses = 0, i = 1;
-        while (misses < 3 && i <= 99) {
-            const src = `pic${i}.jpg`;
-            const ok = await probeImage(src);
-            if (ok) {
-                misses = 0;
-                const idx = loadedImages.length;
-                loadedImages.push(src);
-                const item = document.createElement('div');
-                item.className = 'gallery-item';
-                item.onclick = () => openLb(idx);
-                const img = document.createElement('img');
-                img.src = src; img.alt = ''; img.loading = 'lazy';
-                img.onload = () => img.classList.add('loaded');
-                item.appendChild(img);
-                galleryEl.appendChild(item);
-            } else {
-                misses++;
-            }
-            i++;
-        }
-    }
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', t.meta_description);
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute('content', t.og_title);
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute('content', t.og_description);
 
-    buildGallery();
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria');
+    if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+  });
 
-    function openLb(idx) {
-        lbIndex = idx;
-        document.getElementById('lb-img').src = loadedImages[idx];
-        document.getElementById('lightbox').classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
 
-    function closeLb() {
-        document.getElementById('lightbox').classList.remove('open');
-        document.body.style.overflow = '';
-    }
+  try { localStorage.setItem('studioLang', lang); } catch (e) {}
+}
 
-    function shiftLb(dir) {
-        lbIndex = (lbIndex + dir + loadedImages.length) % loadedImages.length;
-        document.getElementById('lb-img').src = loadedImages[lbIndex];
-    }
+function detectInitialLang() {
+  try {
+    const saved = localStorage.getItem('studioLang');
+    if (saved && translations[saved]) return saved;
+  } catch (e) {}
+  const browserLang = (navigator.language || 'ro').slice(0, 2).toLowerCase();
+  if (translations[browserLang]) return browserLang;
+  return 'ro';
+}
 
-    document.getElementById('lightbox').addEventListener('click', e => {
-        if (e.target === e.currentTarget) closeLb();
-    });
+document.querySelectorAll('.lang-switch button').forEach(btn => {
+  btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
+});
 
-    document.addEventListener('keydown', e => {
-        if (!document.getElementById('lightbox').classList.contains('open')) return;
-        if (e.key === 'Escape') closeLb();
-        if (e.key === 'ArrowLeft')  shiftLb(-1);
-        if (e.key === 'ArrowRight') shiftLb(1);
-    });
+applyLanguage(detectInitialLang());
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('solid', window.scrollY > 30); });
+
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ===== GALERIE: exact 9 fotografii, gallery1.jpg ... gallery9.jpg ===== */
+const galleryEl = document.getElementById('gallery');
+const loadedImages = [];
+let lbIndex = 0;
+
+for (let i = 1; i <= 9; i++) {
+  const src = `images/pic${i}.jpg`;
+  const idx = loadedImages.length;
+  loadedImages.push(src);
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+  item.onclick = () => openLb(idx);
+  const img = document.createElement('img');
+  img.src = src; img.alt = ''; img.loading = 'lazy';
+  img.onerror = () => { item.style.background = 'var(--cream)'; img.remove(); };
+  const zoom = document.createElement('span');
+  zoom.className = 'zoom-icon';
+  zoom.innerHTML = '<i class="fa-solid fa-magnifying-glass-plus"></i>';
+  item.appendChild(img);
+  item.appendChild(zoom);
+  galleryEl.appendChild(item);
+}
+
+function updateLbCounter() { document.getElementById('lb-counter').textContent = `${lbIndex + 1} / ${loadedImages.length}`; }
+function openLb(idx) {
+  lbIndex = idx;
+  document.getElementById('lb-img').src = loadedImages[idx];
+  updateLbCounter();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function shiftLb(dir) {
+  lbIndex = (lbIndex + dir + loadedImages.length) % loadedImages.length;
+  document.getElementById('lb-img').src = loadedImages[lbIndex];
+  updateLbCounter();
+}
+document.getElementById('lightbox').addEventListener('click', e => { if (e.target === e.currentTarget) closeLb(); });
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft')  shiftLb(-1);
+  if (e.key === 'ArrowRight') shiftLb(1);
+});
 </script>
 </body>
 </html>
